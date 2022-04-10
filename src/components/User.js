@@ -1,6 +1,8 @@
 import React from 'react';
 import { Center, Text, Image, HStack } from "native-base";
 
+//這裡沒資料，資料在HomeScreen
+
 export const UserHomeProfile = ({user}) => {
     return (
         <>

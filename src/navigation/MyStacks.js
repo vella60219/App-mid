@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import HomeScreen from "../screens/HomeScreen";
+import ShopScreen from  "../screens/ShopScreen"
 
 const Stack = createNativeStackNavigator();
 
@@ -55,12 +56,13 @@ export const HomeStack = () => {
 };
 
 
+//search bar 之後再解決，可能找個新套件
 export const ShopStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={HomeScreen}
+        component={ShopScreen}
         options={{
           title: null,
           headerStyle:{
@@ -73,7 +75,7 @@ export const ShopStack = () => {
               autoCapitalize: 'none',
               obscureBackground: true,
               onCancelButtonPress: false,
-              hideWhenScrolling: true,
+              hideWhenScrolling: false,
           },
         }}
       />
