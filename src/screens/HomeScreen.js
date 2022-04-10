@@ -1,25 +1,25 @@
 import React from 'react';
 import { ScrollView, Center, Text, Image, HStack } from "native-base";
+import { FlatList, SectionList } from "react-native";
 
 import { UserHomeProfile } from '../components/User';
+import RecentEatItem from '../components/RecentEatItem';
+import ItemList from '../components/RecentEatList';
+
 
 import users from "../json/user.json";
 
 const HomeScreen = () => {
+    let user = users[0];
     return (
         <ScrollView>
             <UserHomeProfile
                 user={users[0]}
             />
-            <Image
-                h='114' w='114'
-                borderRadius={90}
-                mb='16px'
-                source={{uri: user.profile_pic}}
-                alt="大頭照"
-            >
-
-            </Image>
+             {/* <RecentEatItem
+                user={users[0]}
+            /> */}
+            {/* <ItemList/> */}
         </ScrollView>
     );
 }

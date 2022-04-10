@@ -1,11 +1,32 @@
 [
     {
-        "user_id": "01",
+        "user_id": "1",
         "name": "I'm an eggg",
         "profile_pic": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_userpic.png",
         "shop_count": 900,
         "month_count": 300,
-        "city_count": 10
-        
+        "city_count": 10,
+        "item_data": [
+            {
+                "id": "1",
+                "name": "品項",
+                "shop": "店名",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/01",
+                "city": "台北",
+                "favorite": false
+                
+            },
+            {
+                "id": "2",
+                "name": "品項2",
+                "shop": "店名",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/01",
+                "city": "台北",
+                "favorite": false
+                
+            }
+        ]
     }
 ]
