@@ -32,15 +32,15 @@ export const UserHomeProfile = ({user}) => {
                 >
                     <Center>
                         <Text fontSize="2xl">{user.shop_count}</Text>
-                        <Text fontSize="md" color="primary.300">已吃店家</Text>
+                        <Text fontSize="md" color="primary">已吃店家</Text>
                     </Center>
                     <Center>
                         <Text fontSize="2xl">{user.month_count}</Text>
-                        <Text fontSize="md" color="primary.300">本月已吃</Text>
+                        <Text fontSize="md" color="primary">本月已吃</Text>
                     </Center>
                     <Center>
                         <Text fontSize="2xl">{user.city_count}</Text>
-                        <Text fontSize="md" color="primary.300">去過縣市</Text>
+                        <Text fontSize="md" color="primary">去過縣市</Text>
                     </Center>
                 </HStack>
             </Center>

@@ -1,5 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useTheme } from '@react-navigation/native';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -10,17 +11,18 @@ import ShopScreen from "../screens/ShopScreen";
 import MoreScreen from '../screens/MoreScreen';
 import CollectionScreen from "../screens/CollectionScreen";
 
+import MyTheme from "../Theme";
+
 const Tab = createBottomTabNavigator();
 
 
-
-
 const MyTabs = () => {
+  const {colors} = useTheme();
     return (
       <Tab.Navigator
         screenOptions={{
-            tabBarActiveTintColor: '#6200EE',
-            tabBarInactiveTintColor: '#666666',
+            tabBarActiveTintColor: colors.primary ,
+            tabBarInactiveTintColor: "grey",
             headerShown: false,
           // headerShown: false
             tabBarLabelStyle: {

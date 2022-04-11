@@ -5,8 +5,8 @@ const MoreScreen = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <ScrollView
-            _light={{bg:"primary.500"}}
-            _dark={{bg:"primary.400"}}
+            _light={{bg:"primary"}}
+            _dark={{bg:"grey"}}
         >
             <Center flex={1}>
                 <Text fontSize={30}>

@@ -15,8 +15,8 @@ const HomeScreen = ({ navigation }) => {
     return (
         <ScrollView 
             theme={MyTheme}
-            _light={{bg:"primary.500"}}
-            _dark={{bg:"primary.400"}}
+            _light={{bg:"white"}}
+            _dark={{bg:"black"}}
         >
             <UserHomeProfile 
                 user={users[0]}
@@ -30,7 +30,7 @@ const HomeScreen = ({ navigation }) => {
             <Pressable
                 onPress={() => navigation.navigate('Shop')}
                 shadow= {2}
-                h={100} w={100} bg="#000000"
+                h={100} w={100} bg="primary"
             ></Pressable>
         </ScrollView>
     );
