@@ -6,15 +6,13 @@ const MyTheme =  extendTheme({
    ...DefaultTheme,
    colors: {
      ...DefaultTheme.colors,
-     primary:{
-      50:'#BBEFEC', //primary color
-      100:'#4DC5D6', //tag
-     },
+     primary:'#4DC5D6',
+     tag: '#BBEFEC',
      pink:'#FF8593',
      black:'#343434',
      grey:'#949494',
      white:'#FAFAFA',
-     background: '#4DC5D6',
+   //   background: '#4DC5D6',
     },
     //字體
     
