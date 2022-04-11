@@ -1,9 +1,10 @@
 import React from 'react';
-import { Center, Text, Image, HStack, useTheme, useAccessibleColors, getColor } from "native-base";
+import { Center, Text, Image, HStack, useColorMode  ,useTheme, useAccessibleColors, getColor } from "native-base";
 
 //這裡沒資料，資料在HomeScreen
 
 export const UserHomeProfile = ({user}) => {
+    const { colorMode, toggleColorMode } = useColorMode();
     return (
         <>
             <Text mt='5' mx='3'>歡迎回來，{user.name}！</Text>
