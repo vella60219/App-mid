@@ -6,13 +6,13 @@ const MyTheme =  extendTheme({
    colors: {
      ...DefaultTheme.colors,
      primary:{
-      50:'#4DC5D6', //primary color
-      100:'#BBEFEC', //tag
-      200:'#FF8593', //pink
-      300:'#343434', //black
-      400:'#949494', //gray 
-      500:'#FAFAFA', //white
+      50:'#BBEFEC', //primary color
+      100:'#4DC5D6', //tag
      },
+     pink:'#FF8593',
+     black:'#343434',
+     grey:'#949494',
+     white:'#FAFAFA',
      background: '#4DC5D6',
    },
  });

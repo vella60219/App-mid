@@ -35,24 +35,31 @@ export const HomeStack = () => {
                         shadowOpacity: 0,
                         shadowOffset:{height: 0, width: 0},
                     },
-                    headerLeft: () => (
-                        <MaterialCommunityIcons
-                          name={'menu'}
-                          size={24}
-                        />
-                      ),
-                      headerRight: () => (
-                        <MaterialCommunityIcons
-                          name={'magnify'}
-                          size={24}
-                        />
-                      ),
+
                 }}
                 
             />
              <Stack.Screen
                 name="Shop"
                 component={ShopDetailScreen}
+                options={{
+                    title: null,
+                    headerBackTitleVisible: false,
+                    headerShadowVisible:false,
+                    headerTintColor: '#131313',
+                    headerStyle:{
+                        elevation: 0,
+                        shadowOpacity: 0,
+                        shadowOffset:0,
+                        
+                    },
+
+                }}
+                
+            />
+            <Stack.Screen
+                name="Add"
+                component={AddShopScreen}
                 options={{
                     title: null,
                     headerBackTitleVisible: false,
@@ -79,7 +86,7 @@ export const ShopStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
+        name="Shop"
         component={ShopScreen}
         options={{
           title: null,

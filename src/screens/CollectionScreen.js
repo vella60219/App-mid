@@ -3,7 +3,7 @@ import { ScrollView, Center, Text } from "native-base";
 
 const CollectionScreen = () => {
     return (
-        <ScrollView bgColor="primary.500">
+        <ScrollView bgColor="white">
             <Center flex={1}>
                 <Text fontSize={30}>
                     This is CollectionScreen Page
