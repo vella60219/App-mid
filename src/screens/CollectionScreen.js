@@ -1,5 +1,5 @@
 import React from 'react';
-import { Center, Text } from "native-base";
+import { ScrollView, Center, Text } from "native-base";
 
 const CollectionScreen = () => {
     return (
