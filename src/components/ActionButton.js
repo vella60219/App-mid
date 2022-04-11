@@ -9,7 +9,7 @@ const ActionButton = ({ navigation, mode }) =>{
         <>
         {(mode=="edit") ? (
         <Pressable
-            w="60" h="60" bg="primary.100" mt="-60" pt="13"
+            w="60" h="60" bg="primary" mt="-60" pt="13"
             borderRadius={90}
             pos="fixed" top="-21.5" left="345.5"
             zIndex={2}
@@ -22,7 +22,7 @@ const ActionButton = ({ navigation, mode }) =>{
             </Center>
         </Pressable> ) : (
             <Pressable
-            w="60" h="60" bg="primary.100" mt="-60" pt="13"
+            w="60" h="60" bg="primary" mt="-60" pt="13"
             borderRadius={90}
             pos="fixed" top="-21.5" left="345.5"
             zIndex={2}
