@@ -4,8 +4,8 @@ import { Flex, Center, Text, ScrollView, Pressable} from "native-base";
 
 const ShopScreen = ({ navigation }) => {
     return(
-        <ScrollView>
-            <Center bg="emerald.100" flex={1}>
+        <ScrollView bgColor="primary.500">
+            <Center flex={1}>
                 <Text fontSize={30}>
                     This is ShopScreen Page
                 </Text>              

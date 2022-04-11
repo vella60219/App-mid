@@ -1,13 +1,15 @@
 import React from 'react';
-import { Center, Text } from "native-base";
+import { ScrollView, Center, Text } from "native-base";
 
 const CollectionScreen = () => {
     return (
-    <Center bg="emerald.100" flex={1}>
-        <Text fontSize={30}>
-            This is CollectionScreen Page
-        </Text>              
-    </Center>
+        <ScrollView bgColor="primary.500">
+            <Center flex={1}>
+                <Text fontSize={30}>
+                    This is CollectionScreen Page
+                </Text>              
+            </Center>
+        </ScrollView>
     );
 }
 
