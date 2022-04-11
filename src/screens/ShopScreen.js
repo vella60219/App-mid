@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Center, Text, ScrollView } from "native-base";
+import { Flex, Center, Text, ScrollView, Pressable} from "native-base";
 
 
 const ShopScreen = ({ navigation }) => {
@@ -10,6 +10,11 @@ const ShopScreen = ({ navigation }) => {
                     This is ShopScreen Page
                 </Text>              
            </Center>
+           <Pressable
+                onPress={() => navigation.navigate('Shop')}
+                shadow= {2}
+                h={100} w={100} bg="#000000"
+            ></Pressable>
         </ScrollView>
     );
 

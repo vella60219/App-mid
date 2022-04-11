@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import HomeScreen from "../screens/HomeScreen";
 import ShopScreen from "../screens/ShopScreen";
 import MoreScreen from '../screens/MoreScreen';
 import CollectionScreen from "../screens/CollectionScreen";
@@ -17,7 +18,7 @@ import { HomeStack, ShopStack } from "./MyStacks";
 const MyTabs = () => {
     return (
       <Tab.Navigator
-        initialRouteName="HomeStack"
+        
         screenOptions={{
             tabBarActiveTintColor: '#6200EE',
             tabBarInactiveTintColor: '#666666',
@@ -43,7 +44,7 @@ const MyTabs = () => {
       >
         <Tab.Screen 
           name="HomeStack" 
-          component={HomeStack}
+          component={HomeScreen}
           options={{
             headerShown: false,
             title: "首頁",
