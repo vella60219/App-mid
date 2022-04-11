@@ -17,10 +17,11 @@ const HomeScreen = () => {
             <UserHomeProfile theme={MyTheme}
                 user={users[0]}
             />
-             {/* <RecentEatItem
+             {/* <RecentEatItem theme={MyTheme}
                 user={users[0]}
             /> */}
-            {/* <ItemList/> */}
+            {/* <ItemList theme={MyTheme}
+            /> */}
         </ScrollView>
     );
 }
