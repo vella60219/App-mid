@@ -13,8 +13,12 @@ import MyTheme from "../Theme";
 const HomeScreen = ({ navigation }) => {
     let user = users[0];
     return (
-        <ScrollView bgColor="primary.500">
-            <UserHomeProfile theme={MyTheme}
+        <ScrollView 
+            theme={MyTheme}
+            _light={{bg:"primary.500"}}
+            _dark={{bg:"primary.400"}}
+        >
+            <UserHomeProfile 
                 user={users[0]}
             />
              {/* <RecentEatItem
