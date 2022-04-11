@@ -2,6 +2,7 @@ import React from 'react';
 import { Center, Text, Image, HStack, useColorMode ,Switch ,useTheme, useAccessibleColors, getColor } from "native-base";
 import SwitchNativeComponent from 'react-native/Libraries/Components/Switch/SwitchNativeComponent';
 
+
 //這裡沒資料，資料在HomeScreen
 
 export const UserHomeProfile = ({user}) => {
@@ -22,7 +23,7 @@ export const UserHomeProfile = ({user}) => {
                     source={{uri: user.profile_pic}}
                     alt="大頭照"
                 />
-                <Text fontSize="4xl">{user.name}</Text>
+                <Text fontSize="4xl" fontFamily="heading">{user.name}</Text>
                 <HStack
                     py={21} px={10} mt={3}
                     space={8}
