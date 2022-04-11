@@ -12,7 +12,7 @@ import CollectionScreen from "../screens/CollectionScreen";
 
 const Tab = createBottomTabNavigator();
 
-import { HomeStack, ShopStack } from "./MyStacks";
+
 
 
 const MyTabs = () => {
@@ -55,7 +55,7 @@ const MyTabs = () => {
         />
         <Tab.Screen 
           name="ShopStack" 
-          component={ShopStack}
+          component={ShopScreen}
           options={{
             headerShown: false,
             title: "我的店家",

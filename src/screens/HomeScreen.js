@@ -5,15 +5,17 @@ import { FlatList, SectionList } from "react-native";
 import { UserHomeProfile } from '../components/User';
 import RecentEatItem from '../components/RecentEatItem';
 import ItemList from '../components/RecentEatList';
-
+import ActionButton from '../components/ActionButton';
 
 import users from "../json/user.json";
 import MyTheme from "../Theme";
 
+
 const HomeScreen = ({ navigation }) => {
     let user = users[0];
     return (
-        <ScrollView bgColor="primary.500">
+        <>
+        <ScrollView bgColor="white">
             <UserHomeProfile theme={MyTheme}
                 user={users[0]}
             />
@@ -29,6 +31,10 @@ const HomeScreen = ({ navigation }) => {
                 h={100} w={100} bg="#000000"
             ></Pressable>
         </ScrollView>
+        <ActionButton
+            navigation={navigation}
+        />
+        </>
     );
 }
 
