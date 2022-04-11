@@ -8,12 +8,13 @@ import ItemList from '../components/RecentEatList';
 
 
 import users from "../json/user.json";
+import MyTheme from "../Theme";
 
 const HomeScreen = () => {
     let user = users[0];
     return (
-        <ScrollView>
-            <UserHomeProfile
+        <ScrollView bgColor="primary.500">
+            <UserHomeProfile theme={MyTheme}
                 user={users[0]}
             />
              {/* <RecentEatItem

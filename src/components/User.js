@@ -1,23 +1,24 @@
 import React from 'react';
-import { Center, Text, Image, HStack } from "native-base";
+import { Center, Text, Image, HStack, useTheme, useAccessibleColors, getColor } from "native-base";
 
 //這裡沒資料，資料在HomeScreen
 
 export const UserHomeProfile = ({user}) => {
     return (
         <>
-            <Text>歡迎回來，{user.name}！</Text>
-            <Center bg="emerald.100" >
+            <Text mt='5' mx='3'>歡迎回來，{user.name}！</Text>
+            <Center>
                 <Image
                     h='114' w='114'
                     borderRadius={90}
-                    mb='16px'
+                    mb='4' mt={8}
                     source={{uri: user.profile_pic}}
                     alt="大頭照"
                 />
                 <Text fontSize={30}>{user.name}</Text>
                 <HStack
-                    py={21} px={52.5}
+                    py={21} px={10} mt={3}
+                    space={8}
                     justifyContent= "center"
                     borderWidth={2}
                     borderRadius={15}
