@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Center, Text, Image, HStack } from "native-base";
+import { ScrollView, useColorMode ,Center, Text, Image, HStack } from "native-base";
 import { FlatList, SectionList } from "react-native";
 
 import { UserHomeProfile } from '../components/User';
@@ -12,8 +12,13 @@ import MyTheme from "../Theme";
 
 const HomeScreen = () => {
     let user = users[0];
+    const { colorMode, toggleColorMode } = useColorMode();
     return (
-        <ScrollView bgColor="primary.500" theme={MyTheme}>
+        <ScrollView 
+            theme={MyTheme}
+            _light={{bg:"primary.500"}}
+            _dark={{bg:"primary.400"}}
+        >
             <UserHomeProfile
                 user={users[0]}
             />

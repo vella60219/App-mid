@@ -12,11 +12,48 @@ const MyTheme =  extendTheme({
       300:'#949494', //gray 
       //黑跟白先不用 
       //要切換mode，有找到可customize的解法再進行微調
-      // 400:'#343434', //black 
-      // 500:'#FAFAFA', //white
+      400:'#343434', //black 
+      500:'#FAFAFA', //white
      },
-     background: '#4DC5D6',
-   },
+    },
+    fontConfig: {
+      Roboto: {
+        100: {
+          normal: 'Roboto-Light',
+        },
+        200: {
+          normal: 'Roboto-Light',
+        },
+        300: {
+          normal: 'Roboto-Light',
+        },
+        400: {
+          normal: 'Roboto-Medium',
+        },
+        500: {
+          normal: 'Roboto-Medium',
+        },
+        600: {
+          normal: 'Roboto-Medium',
+        },
+        // Add more variants
+        //   700: {
+        //     normal: 'Roboto-Bold',
+        //   },
+        //   800: {
+        //     normal: 'Roboto-Bold',
+        //     italic: 'Roboto-BoldItalic',
+        //   },
+        //   900: {
+        //     normal: 'Roboto-Bold',
+        //     italic: 'Roboto-BoldItalic',
+        //   },
+      },
+    },
+    fonts: {
+      heading: 'Roboto',
+      body: 'Roboto',
+    },
  });
 
  export default MyTheme;
