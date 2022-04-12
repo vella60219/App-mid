@@ -42,6 +42,8 @@ export const RecentEatItem = ({ navigation, item }) => {
 }
 
 export const MostShopItem = ({ navigation, item , rank}) => {
+    var bg;
+    {(rank == 1)? (bg="primary"): (bg="transparent")}
     return (
         <Pressable 
             display="flex" 
@@ -56,7 +58,9 @@ export const MostShopItem = ({ navigation, item , rank}) => {
                     h='55' w='55'
                     borderRadius={90}
                     marginRight="3"
-                    bg = {({rank} == 1)?"black": "primary"} //rank判別失敗
+                    bg = {bg} 
+                    borderWidth="2"
+                    borderColor="primary"
                 >
                     <Text
                         fontSize= "2xl"

@@ -13,6 +13,7 @@ import HomeScreen from "../screens/HomeScreen";
 import ShopScreen from  "../screens/ShopScreen";
 import ShopDetailScreen from "../screens/ShopDetailScreen";
 import AddShopScreen from "../screens/AddShopScreen";
+import MoreScreen from "../screens/MoreScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -83,7 +84,6 @@ export const HomeStack = ({navigation ,props }) => {
         </Stack.Navigator>
       );
 };
-
 
 //search bar 之後再解決，可能找個新套件
 export const ShopStack = () => {

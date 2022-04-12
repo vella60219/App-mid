@@ -10,12 +10,15 @@ const ShopScreen = ({ navigation }) => {
     var user = users[0];
     return(
         <>
-            <ScrollView bgColor="white">
+            <ScrollView 
+                _light={{bg:"white"}}
+                _dark={{bg:"black"}}
+            >
                 <Center flex={1}>
                     <Text fontSize={30}>
                         This is ShopScreen Page
                     </Text>              
-            </Center>
+                </Center>
             
             {/* <TestList navigation={navigation} sections={user} /> */}
             </ScrollView>

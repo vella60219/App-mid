@@ -1,13 +1,14 @@
+import { useTheme } from 'native-base';
 import React from 'react';
 
 import ActionButton from "../components/ActionButton";
+import HomeScroll from '../components/HomeScroll';
 
 import users from "../json/user.json";
 import MyTheme from "../Theme";
 
-import HomeScroll from '../components/HomeScroll';
-
 const HomeScreen = ({ navigation }) => {
+    const {colors} = useTheme();
     let user = users[0];
     return (
         <>
