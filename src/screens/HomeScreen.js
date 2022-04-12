@@ -9,7 +9,6 @@ import users from "../json/user.json";
 import MyTheme from "../Theme";
 
 
-
 import HomeScroll from '../components/HomeScroll';
 
 
@@ -26,7 +25,6 @@ const HomeScreen = ({ navigation }) => {
 
                 navigation={navigation} sections={user} 
             />
-
             <ActionButton navigation={navigation} />
         </>
     );

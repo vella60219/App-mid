@@ -10,6 +10,7 @@
             {
                 "shop_id": "1",
                 "shop_name": "店名",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -23,6 +24,7 @@
             {
                 "shop_id": "2",
                 "shop_name": "店名2",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶!",
@@ -36,6 +38,7 @@
             {
                 "shop_id": "3",
                 "shop_name": "店名3",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -49,6 +52,7 @@
             {
                 "shop_id": "4",
                 "shop_name": "店名4",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -62,6 +66,7 @@
             {
                 "shop_id": "5",
                 "shop_name": "店名5",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -75,6 +80,7 @@
             {
                 "shop_id": "6",
                 "shop_name": "店名6",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
