@@ -6,7 +6,7 @@ const MoreScreen = () => {
     return (
         <ScrollView
             _light={{bg:"white"}}
-            _dark={{bg:"grey"}}
+            _dark={{bg:"black"}}
         >
             <Center flex={1}>
                 <Text fontSize={30}>
@@ -16,9 +16,9 @@ const MoreScreen = () => {
                     justifyContent="space-around" 
                     alignItems ="center" 
                     py={21} px={10} mt={3}
-                    borderWidth={2}
+                    borderWidth={1}
                     borderRadius={15}
-                    borderColor="dark.200"
+                    borderColor="grey"
                 >
                     <Text fontSize="lg">{colorMode=="light"?"Light Mode" : "Dark MOde"}</Text>
                     <Switch 
