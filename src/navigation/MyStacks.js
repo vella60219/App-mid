@@ -1,11 +1,13 @@
 import React from "react";
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { TouchableOpacity } from 'react-native';
+import { useTheme } from '@react-navigation/native';
 
-
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import MyTabs from "./MyTabs";
+import MyTheme from "../Theme";
 
 import HomeScreen from "../screens/HomeScreen";
 import ShopScreen from  "../screens/ShopScreen";
@@ -14,11 +16,8 @@ import AddShopScreen from "../screens/AddShopScreen";
 
 const Stack = createNativeStackNavigator();
 
-
-
-
-
-export const HomeStack = () => {
+export const HomeStack = ({navigation ,props }) => {
+  const {colors} = useTheme();
     return (
           <Stack.Navigator
             initialRouteName="Home"
@@ -60,7 +59,7 @@ export const HomeStack = () => {
             <Stack.Screen
                 name="Add"
                 component={AddShopScreen}
-                options={{
+                options={({ route }) => ({
                     title: null,
                     headerBackTitleVisible: false,
                     headerShadowVisible:false,
@@ -69,11 +68,16 @@ export const HomeStack = () => {
                         elevation: 0,
                         shadowOpacity: 0,
                         shadowOffset:0,
-                        
                     },
-
-                }}
-                
+                    headerLeft: () => (
+                      <TouchableOpacity 
+                        // onPress={() => navigation.goBack()}
+                      >
+                         <Ionicons name="chevron-back" color={colors.primary} size={25} />
+                      </TouchableOpacity>
+                    ),
+                  })
+                }
             />
             
         </Stack.Navigator>

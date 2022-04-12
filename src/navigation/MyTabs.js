@@ -21,7 +21,7 @@ const MyTabs = () => {
     return (
       <Tab.Navigator
         screenOptions={{
-            tabBarActiveTintColor: colors.primary ,
+            tabBarActiveTintColor: MyTheme.primary ,
             tabBarInactiveTintColor: "grey",
             headerShown: false,
           // headerShown: false
