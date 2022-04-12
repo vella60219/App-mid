@@ -71,7 +71,7 @@ export const TagList = ({ navigation, sections, edit, bg }) => {
             >
             
                 <FlatList
-                        // scrollEnabled={false}
+                        scrollEnabled={false}
                         horizontal={true}
                         data={sections}
                         // numColumns={5}
@@ -81,7 +81,7 @@ export const TagList = ({ navigation, sections, edit, bg }) => {
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={ item => item }
                         contentContainerStyle={{
-                            paddingTop: 8, paddingLeft: 15, paddingRight: 15
+                            paddingTop: 8, paddingLeft: 15, paddingRight: 15,
                         }}
                     />
             </Box>
