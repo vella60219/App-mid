@@ -7,12 +7,15 @@ import { RecentEatItem, MostShopItem } from "./HomeListItem";
 
 export const RecentEatList = ({ navigation, sections }) => {
     
-    
+    var i =1;
 
     const renderItem = ( {item} ) => {
         return (
             <>
-                 <RecentEatItem navigation={navigation}  item={item}/>
+            {(i<6) ? (
+                <RecentEatItem navigation={navigation}  item={item} rank={i++} />
+            ):null}
+                 
             </>
         );
     };
