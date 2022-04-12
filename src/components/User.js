@@ -27,6 +27,7 @@ export const UserHomeProfile = ({user}) => {
                     justifyContent= "center"
                     borderWidth={2}
                     borderRadius={15}
+                    borderColor="primary"
                 >
                     <Center>
                         <Text fontSize="2xl">{user.shop_count}</Text>

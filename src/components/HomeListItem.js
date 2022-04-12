@@ -56,7 +56,7 @@ export const MostShopItem = ({ navigation, item , rank}) => {
                     h='55' w='55'
                     borderRadius={90}
                     marginRight="3"
-                    bg = "primary" 
+                    bg = {({rank} == 1)?"black": "primary"} //rank判別失敗
                 >
                     <Text
                         fontSize= "2xl"
