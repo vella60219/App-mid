@@ -5,7 +5,7 @@ import { FlatList, SectionList } from "react-native";
 import RecentEatItem from "./RecentEatItem";
 import sections from "../json/user.json";
 
-const RecentEatList = ({ navigation, sections }) => {
+const TestList = ({ navigation, sections }) => {
     
     
 
@@ -18,8 +18,7 @@ const RecentEatList = ({ navigation, sections }) => {
     };
 
     return (
-        <Box >
-            <Text>近期吃</Text>
+        <>
             <FlatList
                     horizontal={true}
                     data={sections.dish_data}
@@ -28,8 +27,8 @@ const RecentEatList = ({ navigation, sections }) => {
                     keyExtractor={ item => item.id }
                     contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
                 />
-        </Box>
+        </>
     );
 };
 
-export default RecentEatList;
+export default TestList;

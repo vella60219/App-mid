@@ -1,10 +1,12 @@
 import React from 'react';
 import { ScrollView, Center, Text, Image, Pressable, Box, Flex } from "native-base";
 
-const RecentEatItem = ({item}) => {
+const RecentEatItem = ({ navigation, item }) => {
 
     return (
-        <Pressable h='146' w='146'  >
+        <Pressable h='146' w='146'
+            onPress={() => navigation.navigate('Shop', item)}
+        >
             <Image
                 h='146' w='146'
                 borderRadius={15}

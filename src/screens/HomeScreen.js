@@ -4,12 +4,20 @@ import { FlatList, SectionList } from "react-native";
 
 import { UserHomeProfile } from '../components/User';
 import RecentEatItem from '../components/RecentEatItem';
-import ItemList from '../components/RecentEatList';
+import RecentEatList from '../components/RecentEatList';
+import MostShopList from '../components/MostShopList';
+import MostShopItem from '../components/MostShopItem';
 
 import ActionButton from "../components/ActionButton";
 
 import users from "../json/user.json";
 import MyTheme from "../Theme";
+
+
+
+import TestList from '../components/TestList';
+
+
 
 const HomeScreen = ({ navigation }) => {
     let user = users[0];
@@ -17,23 +25,13 @@ const HomeScreen = ({ navigation }) => {
         <>
             <ScrollView 
                 theme={MyTheme}
+    //記得改回white
                 _light={{bg:"white"}}
                 _dark={{bg:"black"}}
             >
-                <UserHomeProfile 
-                    user={users[0]}
-                />
-                {/* <RecentEatItem
-                    user={users[0]}
-                /> */}
-                {/* <ItemList/> */}
-
-
-                <Pressable
-                    onPress={() => navigation.navigate('Shop')}
-                    shadow= {2}
-                    h={100} w={100} bg="primary"
-                ></Pressable>
+                <UserHomeProfile user={user} />
+                <RecentEatList navigation={navigation} sections={user} />
+                <MostShopList navigation={navigation} sections={user} />
             </ScrollView>
             <ActionButton navigation={navigation} />
         </>
