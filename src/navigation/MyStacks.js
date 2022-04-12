@@ -1,7 +1,6 @@
 import React from "react";
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { TouchableOpacity } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -28,13 +27,13 @@ export const HomeStack = ({navigation ,props }) => {
                 component={MyTabs}
                 options={{
                   headerShown: false,
-                    headerShadowVisible:false,
-                    title: null,
-                    headerStyle:{
-                        elevation: 0,
-                        shadowOpacity: 0,
-                        shadowOffset:{height: 0, width: 0},
-                    },
+                  headerShadowVisible:false,
+                  title: null,
+                  headerStyle:{
+                      elevation: 0,
+                      shadowOpacity: 0,
+                      shadowOffset:{height: 0, width: 0},
+                  },
 
                 }}
                 
@@ -111,3 +110,4 @@ export const ShopStack = () => {
     </Stack.Navigator>
     );
 };
+
