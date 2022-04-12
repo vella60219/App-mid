@@ -8,11 +8,11 @@ const AddShopScreen = ({ navigation }) => {
         <Text fontSize={30}>
             This is AddShopScreen Page
         </Text>
-            <Pressable
+            {/* <Pressable
                 onPress={() => navigation.navigate('Shop')}
                 shadow= {2}
                 h={100} w={100} bg="#999999"
-            ></Pressable>      
+            ></Pressable>       */}
     </Center>
     </>
     );

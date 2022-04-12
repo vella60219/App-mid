@@ -6,25 +6,153 @@
         "shop_count": 900,
         "month_count": 300,
         "city_count": 10,
-        "item_data": [
+        "shop_data": [
+            {
+                "shop_id": "1",
+                "shop_name": "店名",
+                "dish_count": 3,
+                "favorite": false,
+                "introduction": "好耶！",
+                "tag_data": [ "早午餐", "國北優惠" ],
+                "city": "台北",
+                "address": "台北市大安區和平東路二段134號",
+                "open_time": "週一～週五　08:10~17:20",
+                "phone_number": "02-6639-6688",
+                "detail": "救救我啊我救我"
+            },
+            {
+                "shop_id": "2",
+                "shop_name": "店名2",
+                "dish_count": 3,
+                "favorite": false,
+                "introduction": "好耶!",
+                "tag_data": [ "早午餐", "國北優惠" ],
+                "city": "台北",
+                "address": "台北市大安區和平東路二段134號",
+                "open_time": "週一～週五　08:10~17:20",
+                "phone_number": "02-6639-6688",
+                "detail": "救救我啊我救我"
+            },
+            {
+                "shop_id": "3",
+                "shop_name": "店名3",
+                "dish_count": 3,
+                "favorite": false,
+                "introduction": "好耶！",
+                "tag_data": [ "早午餐", "國北優惠" ],
+                "city": "台北",
+                "address": "台北市大安區和平東路二段134號",
+                "open_time": "週一～週五　08:10~17:20",
+                "phone_number": "02-6639-6688",
+                "detail": "救救我啊我救我"
+            },
+            {
+                "shop_id": "4",
+                "shop_name": "店名4",
+                "dish_count": 3,
+                "favorite": false,
+                "introduction": "好耶！",
+                "tag_data": [ "早午餐", "國北優惠" ],
+                "city": "台北",
+                "address": "台北市大安區和平東路二段134號",
+                "open_time": "週一～週五　08:10~17:20",
+                "phone_number": "02-6639-6688",
+                "detail": "救救我啊我救我"
+            },
+            {
+                "shop_id": "5",
+                "shop_name": "店名5",
+                "dish_count": 3,
+                "favorite": false,
+                "introduction": "好耶！",
+                "tag_data": [ "早午餐", "國北優惠" ],
+                "city": "台北",
+                "address": "台北市大安區和平東路二段134號",
+                "open_time": "週一～週五　08:10~17:20",
+                "phone_number": "02-6639-6688",
+                "detail": "救救我啊我救我"
+            },
+            {
+                "shop_id": "6",
+                "shop_name": "店名6",
+                "dish_count": 3,
+                "favorite": false,
+                "introduction": "好耶！",
+                "tag_data": [ "早午餐", "國北優惠" ],
+                "city": "台北",
+                "address": "台北市大安區和平東路二段134號",
+                "open_time": "週一～週五　08:10~17:20",
+                "phone_number": "02-6639-6688",
+                "detail": "救救我啊我救我"
+            }
+        ],
+        "dish_data": [
             {
                 "id": "1",
                 "name": "品項",
-                "shop": "店名",
+                "shop_id": "1",
                 "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
-                "date": "2022/04/01",
+                "date": "2022/03/18",
                 "city": "台北",
-                "favorite": false
-                
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
             },
             {
                 "id": "2",
                 "name": "品項2",
-                "shop": "店名",
+                "shop_id": "2",
                 "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
                 "date": "2022/04/01",
                 "city": "台北",
-                "favorite": false
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+                
+            },
+            {
+                "id": "3",
+                "name": "品項3",
+                "shop_id": "1",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/03",
+                "city": "台北",
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+            },
+            {
+                "id": "4",
+                "name": "品項4",
+                "shop_id": "2",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/04",
+                "city": "台北",
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+                
+            }, {
+                "id": "5",
+                "name": "品項5",
+                "shop_id": "1",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/05",
+                "city": "台北",
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+            },
+            {
+                "id": "6",
+                "name": "品項6",
+                "shop_id": "2",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/06",
+                "city": "台北",
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
                 
             }
         ]

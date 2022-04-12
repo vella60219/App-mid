@@ -3,7 +3,11 @@ import { Flex, Center, Text, ScrollView, Pressable} from "native-base";
 
 import ActionButton from "../components/ActionButton";
 
+import users from "../json/user.json";
+// import TestList from "../components/TestList";
+
 const ShopScreen = ({ navigation }) => {
+    var user = users[0];
     return(
         <>
             <ScrollView bgColor="white">
@@ -12,11 +16,8 @@ const ShopScreen = ({ navigation }) => {
                         This is ShopScreen Page
                     </Text>              
             </Center>
-            <Pressable
-                    onPress={() => navigation.navigate('Shop')}
-                    shadow= {2}
-                    h={100} w={100} bg="#000000"
-                ></Pressable>
+            
+            {/* <TestList navigation={navigation} sections={user} /> */}
             </ScrollView>
             <ActionButton navigation={navigation}/>
         </>
