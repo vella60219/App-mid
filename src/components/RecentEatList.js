@@ -18,7 +18,7 @@ const RecentEatList = ({ navigation, sections }) => {
     };
 
     return (
-        <Box>
+        <Box >
             <Text>近期吃</Text>
             <FlatList
                     horizontal={true}

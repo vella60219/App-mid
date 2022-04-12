@@ -5,6 +5,8 @@ import { FlatList, SectionList } from "react-native";
 import { UserHomeProfile } from '../components/User';
 import RecentEatItem from '../components/RecentEatItem';
 import RecentEatList from '../components/RecentEatList';
+import MostShopList from '../components/MostShopList';
+import MostShopItem from '../components/MostShopItem';
 
 import ActionButton from "../components/ActionButton";
 
@@ -29,6 +31,7 @@ const HomeScreen = ({ navigation }) => {
             >
                 <UserHomeProfile user={user} />
                 <RecentEatList navigation={navigation} sections={user} />
+                <MostShopList navigation={navigation} sections={user} />
             </ScrollView>
             <ActionButton navigation={navigation} />
         </>
