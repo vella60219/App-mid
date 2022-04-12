@@ -69,13 +69,13 @@ export const HomeStack = ({navigation ,props }) => {
                         shadowOpacity: 0,
                         shadowOffset:0,
                     },
-                    headerLeft: () => (
-                      <TouchableOpacity 
+                    // headerLeft: () => (
+                    //   <TouchableOpacity 
                         // onPress={() => navigation.goBack()}
-                      >
-                         <Ionicons name="chevron-back" color={colors.primary} size={25} />
-                      </TouchableOpacity>
-                    ),
+                    //   >
+                    //      <Ionicons name="chevron-back" color={colors.primary} size={25} />
+                    //   </TouchableOpacity>
+                    // ),
                   })
                 }
             />

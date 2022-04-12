@@ -1,7 +1,5 @@
 import React from 'react';
 import { Center, Text, Image, HStack ,useTheme, useAccessibleColors, getColor } from "native-base";
-import SwitchNativeComponent from 'react-native/Libraries/Components/Switch/SwitchNativeComponent';
-
 
 //這裡沒資料，資料在HomeScreen
 
@@ -18,13 +16,13 @@ export const UserHomeProfile = ({user}) => {
                 <Image
                     h='114' w='114'
                     borderRadius={90}
-                    mb='4' mt={8}
+                    mb={3} mt={8}
                     source={{uri: user.profile_pic}}
                     alt="大頭照"
                 />
-                <Text fontSize="4xl" fontFamily="heading">{user.name}</Text>
+                <Text fontSize="4xl" fontWeight="bold">{user.name}</Text>
                 <HStack
-                    py={21} px={10} mt={3}
+                    py={18} px={10} mt={3}
                     space={8}
                     justifyContent= "center"
                     borderWidth={2}
@@ -32,15 +30,15 @@ export const UserHomeProfile = ({user}) => {
                 >
                     <Center>
                         <Text fontSize="2xl">{user.shop_count}</Text>
-                        <Text fontSize="md" color="primary">已吃店家</Text>
+                        <Text fontSize="md" color="grey">已吃店家</Text>
                     </Center>
                     <Center>
                         <Text fontSize="2xl">{user.month_count}</Text>
-                        <Text fontSize="md" color="primary">本月已吃</Text>
+                        <Text fontSize="md" color="grey">本月已吃</Text>
                     </Center>
                     <Center>
                         <Text fontSize="2xl">{user.city_count}</Text>
-                        <Text fontSize="md" color="primary">去過縣市</Text>
+                        <Text fontSize="md" color="grey">去過縣市</Text>
                     </Center>
                 </HStack>
             </Center>
