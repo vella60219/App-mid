@@ -6,25 +6,56 @@
         "shop_count": 900,
         "month_count": 300,
         "city_count": 10,
-        "item_data": [
+        "shop_data": [
+            {
+                "shop_id": "1",
+                "shop_name": "店名",
+                "dish_count": 3,
+                "favorite": false,
+                "introduction": "好耶！",
+                "tag_data": [ "早午餐", "國北優惠" ],
+                "city": "台北",
+                "address": "台北市大安區和平東路二段134號",
+                "open_time": "週一～週五　08:10~17:20",
+                "phone_number": "02-6639-6688",
+                "detail": "救救我啊我救我"
+            },
+            {
+                "shop_id": "2",
+                "shop_name": "店名2",
+                "dish_count": 3,
+                "favorite": false,
+                "introduction": "好耶！",
+                "tag_data": [ "早午餐", "國北優惠" ],
+                "city": "台北",
+                "address": "台北市大安區和平東路二段134號",
+                "open_time": "週一～週五　08:10~17:20",
+                "phone_number": "02-6639-6688",
+                "detail": "救救我啊我救我"
+            }
+        ],
+        "dish_data": [
             {
                 "id": "1",
                 "name": "品項",
-                "shop": "店名",
+                "shop_id": "1",
                 "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
-                "date": "2022/04/01",
+                "date": "2022/03/18",
                 "city": "台北",
-                "favorite": false
-                
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
             },
             {
                 "id": "2",
                 "name": "品項2",
-                "shop": "店名",
+                "shop_id": "2",
                 "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
                 "date": "2022/04/01",
                 "city": "台北",
-                "favorite": false
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
                 
             }
         ]

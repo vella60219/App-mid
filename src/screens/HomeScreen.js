@@ -11,22 +11,31 @@ import ActionButton from "../components/ActionButton";
 import users from "../json/user.json";
 import MyTheme from "../Theme";
 
+
+
+import TestList from '../components/TestList';
+
+
+
 const HomeScreen = ({ navigation }) => {
     let user = users[0];
     return (
         <>
             <ScrollView 
                 theme={MyTheme}
-                _light={{bg:"white"}}
+    //記得改回white
+                _light={{bg:"tag"}}
                 _dark={{bg:"black"}}
             >
                 <UserHomeProfile 
-                    user={users[0]}
+                    user={user}
                 />
                 {/* <RecentEatItem
-                    user={users[0]}
+                    item = {user}
                 /> */}
                 {/* <ItemList/> */}
+
+                
 
 
                 <Pressable
@@ -34,6 +43,7 @@ const HomeScreen = ({ navigation }) => {
                     shadow= {2}
                     h={100} w={100} bg="primary"
                 ></Pressable>
+                <TestList navigation={navigation} sections={user} />
             </ScrollView>
             <ActionButton navigation={navigation} />
         </>
