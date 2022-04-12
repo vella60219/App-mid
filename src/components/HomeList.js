@@ -1,11 +1,42 @@
 import React from "react";
 import { Box, Text } from "native-base";
-import { FlatList, SectionList } from "react-native";
+import { FlatList } from "react-native";
 
-import MostShopItem from "./MostShopItem";
-import sections from "../json/user.json";
+import { RecentEatItem, MostShopItem } from "./HomeListItem";
 
-const MostShopList = ({ navigation, sections }) => {
+
+export const RecentEatList = ({ navigation, sections }) => {
+    
+    
+
+    const renderItem = ( {item} ) => {
+        return (
+            <>
+                 <RecentEatItem navigation={navigation}  item={item}/>
+            </>
+        );
+    };
+
+    return (
+        <Box >
+            <Text>近期吃</Text>
+            <FlatList
+                    horizontal={true}
+                    data={sections.dish_data}
+                    renderItem={renderItem}
+                    showsHorizontalScrollIndicator={false}
+                    keyExtractor={ item => item.id }
+                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+                />
+        </Box>
+    );
+};
+
+
+
+
+
+export const MostShopList = ({ navigation, sections }) => {
     
     var i =1;
 
@@ -40,5 +71,3 @@ const MostShopList = ({ navigation, sections }) => {
         </>
     );
 };
-
-export default MostShopList;
