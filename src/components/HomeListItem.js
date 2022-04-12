@@ -5,36 +5,29 @@ import { Center, Text, Image, Pressable, Box, Flex, HStack } from "native-base";
 export const RecentEatItem = ({ navigation, item }) => {
     return (
         <Pressable 
-            h='146' w='146'
+            h='160' w='160'
             mr={3}
             onPress={() => navigation.navigate('Shop', item)}
         >
             <Image
-                h='146' w='146'
+                h='160' w='160'
                 borderRadius={15}
                 source={{uri: item.photo}}
                 alt="近期吃的照片"
             />
             <Box
                 pos="fixed"
-                top={0}
-                h='146' w='146'
-                color="black"
-                opacity={0.2}
-            >
-            </Box>
-            <Box
-                pos="fixed"
-                bottom= "50"
+                bottom= "55"
                 left="3"
             >
-                <Text color="#fff">{item.date}</Text>
-                <Flex flexDirection="row">
+                <Text fontSize="md" color="white">{item.date}</Text>
+                <Flex flexDirection="row" alignItems="center">
                     <Image
                         source= {require("../img/icon_location.png")}
                         alt=" "
+                        mr="1"
                     />
-                    <Text color="#fff">{item.city}</Text>
+                    <Text fontSize="md" lineHeight="md" color="white">{item.city}</Text>
                 </Flex>
             </Box>
         </Pressable>

@@ -2,6 +2,7 @@ import React from "react";
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from '@react-navigation/native';
+import {Button} from 'native-base';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -111,3 +112,25 @@ export const ShopStack = () => {
     );
 };
 
+// export const MoreStack = () => {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen
+//         name="More"
+//         component={MoreScreen}
+//         options={{
+//           headerShown: true,
+//           headerShadowVisible:false,
+//           headerBackground:"transparent",
+//           headerRight: () => (
+//             <Button
+//               onPress={() => alert('This is a button!')}
+//               title="Info"
+//               color="#fff"
+//             />
+//           ),
+//         }}
+//       />
+//     </Stack.Navigator>
+//     );
+// };
