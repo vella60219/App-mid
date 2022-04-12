@@ -57,6 +57,51 @@
                 "price": 2333,
                 "detail": "好吃好吃好吃好吃"
                 
+            },
+            {
+                "id": "3",
+                "name": "品項3",
+                "shop_id": "1",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/03",
+                "city": "台北",
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+            },
+            {
+                "id": "4",
+                "name": "品項4",
+                "shop_id": "2",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/04",
+                "city": "台北",
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+                
+            }, {
+                "id": "5",
+                "name": "品項5",
+                "shop_id": "1",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/05",
+                "city": "台北",
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+            },
+            {
+                "id": "6",
+                "name": "品項6",
+                "shop_id": "2",
+                "photo": "https://raw.githubusercontent.com/vella60219/App-mid/master/src/img/img_shop1_item1.png",
+                "date": "2022/04/06",
+                "city": "台北",
+                "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+                
             }
         ]
     }
