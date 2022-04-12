@@ -3,21 +3,15 @@ import { ScrollView, Center, Text, Image, HStack, Pressable } from "native-base"
 import { FlatList, SectionList } from "react-native";
 
 import { UserHomeProfile } from '../components/User';
-import RecentEatItem from '../components/RecentEatItem';
 import RecentEatList from '../components/RecentEatList';
 import MostShopList from '../components/MostShopList';
-import MostShopItem from '../components/MostShopItem';
 
 import ActionButton from "../components/ActionButton";
 
 import users from "../json/user.json";
 import MyTheme from "../Theme";
 
-
-
 import TestList from '../components/TestList';
-
-
 
 const HomeScreen = ({ navigation }) => {
     let user = users[0];
