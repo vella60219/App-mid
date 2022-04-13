@@ -178,7 +178,6 @@ export const DishListItem = ({ navigation, item }) => {
                         <Text
                             fontSize="md"
                             letterSpacing='1'
-                            color={colors.black}
                         >{item.detail}</Text>
                     </Box>
                 </Flex>

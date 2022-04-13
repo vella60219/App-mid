@@ -58,6 +58,8 @@ const TopTab = ({navigation, shop, mode}) => {
 
   return (
     <Tab.Navigator
+      _light={{bg: colors.white }}
+      _dark={{bg: colors.black}}
       initialRouteName="shop"
       screenOptions={{
         tabBarActiveTintColor: colors.primary,
@@ -68,7 +70,9 @@ const TopTab = ({navigation, shop, mode}) => {
           textTransform: "none",
         },
         tabBarIndicatorStyle: { backgroundColor: colors.primary },
-        tabBarStyle: { backgroundColor: colors.white },
+        tabBarStyle: { 
+          // backgroundColor: colors.white 
+        },
         initialLayout: { width: Dimensions.get('window').width },
       }}>
       <Tab.Screen name="已吃品項" id="dish" component={FirstRoute}  />
