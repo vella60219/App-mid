@@ -70,9 +70,9 @@ export const EditShopInfo = ({ nevigation,}) => {
                 <Text>地址</Text>
                 <Box alignItems="center">
                     <Input 
-                        mx="3" placeholder="Ex: 臺北市信義區信義路五段7號" w="100%"
+                        mx="3" my="1" mb="4" px="4" placeholder="Ex: 臺北市信義區信義路五段7號" w="100%"
                         variant="filled"
-                        _focus={{borderColor:colors.pr}}
+                        _focus={{borderColor:colors.primary}}
                     />
                 </Box>
             </VStack>
@@ -80,9 +80,9 @@ export const EditShopInfo = ({ nevigation,}) => {
                 <Text>營業時間</Text>
                 <Box alignItems="center">
                     <Input 
-                        mx="3" placeholder="Ex: 週一～週五 08:00~17:30" w="100%"
+                        mx="3" my="1" mb="4" px="4" placeholder="Ex: 週一～週五 08:00~17:30" w="100%"
                         variant="filled"
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.primary}}
                     />
                 </Box>
             </VStack>
@@ -90,9 +90,9 @@ export const EditShopInfo = ({ nevigation,}) => {
                 <Text>電話</Text>
                 <Box alignItems="center">
                     <Input
-                        mx="3" placeholder="02-8101-8800" w="100%" 
+                        mx="3" my="1" mb="4" px="4" placeholder="02-8101-8800" w="100%" 
                         variant="filled"
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.primary}}
                     />
                 </Box>
             </VStack>
@@ -100,9 +100,9 @@ export const EditShopInfo = ({ nevigation,}) => {
                 <Text>更多資訊</Text>
                 <Box alignItems="center">
                     <Input
-                        mx="3" placeholder="Ex: 每月一日買五送一" w="100%" h="45%"
+                        mx="3" my="1" mb="4" px="4" placeholder="Ex: 每月一日買五送一" w="100%" h="45%"
                         variant="filled"
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.primary}}
                     />
                 </Box>
             </VStack>

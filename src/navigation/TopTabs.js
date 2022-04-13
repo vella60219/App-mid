@@ -44,7 +44,7 @@ const TopTab = ({navigation, shop, mode}) => {
         <AddItem navigation={navigation} mode="add" />
 
       ThirdRoute = () => 
-      <EditShopInfo navigation={navigation} />
+        <EditShopInfo navigation={navigation} />
         // <ShopInfo navigation={navigation} shop={shop} />
         
       break;
