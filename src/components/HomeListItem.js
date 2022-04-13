@@ -1,63 +1,76 @@
 import React from 'react';
-import { ScrollView, Center, Text, Image, Pressable, Box, Flex } from "native-base";
+import { Center, Text, Image, Pressable, Box, Flex, HStack } from "native-base";
+// import LinearGradient from 'react-native-linear-gradient'; // import LinearGradient
 
 export const RecentEatItem = ({ navigation, item }) => {
-
     return (
-        <Pressable h='146' w='146'
+        <Pressable 
+            h='160' w='160'
+            mr={3}
             onPress={() => navigation.navigate('Shop', item)}
         >
             <Image
-                h='146' w='146'
+                h='160' w='160'
                 borderRadius={15}
-                mb='16px'
                 source={{uri: item.photo}}
-                alt="大頭照"
+                alt="近期吃的照片"
             />
             <Box
                 pos="fixed"
-                bottom= "60"
+                bottom= "55"
+                left="3"
             >
-                <Text color="#fff">{item.date}</Text>
-                <Flex flexDirection="row">
+                <Text fontSize="md" color="white">{item.date}</Text>
+                <Flex flexDirection="row" alignItems="center">
                     <Image
                         source= {require("../img/icon_location.png")}
                         alt=" "
+                        mr="1"
                     />
-                    <Text color="#fff">{item.city}</Text>
+                    <Text fontSize="md" lineHeight="md" color="white">{item.city}</Text>
                 </Flex>
             </Box>
         </Pressable>
     );
 }
 
-
-
-
 export const MostShopItem = ({ navigation, item , rank}) => {
-
+    var bg;
+    {(rank == 1)? (bg="primary"): (bg="transparent")}
     return (
-        <Pressable display="flex" flexDirection="row"
+        <Pressable 
+            display="flex" 
+            flexDirection="row"
             onPress={() => navigation.navigate('Shop', item)}
         >
-            <Box
-                h='49' w='49' bg="primary"
-                borderRadius={90}
-                mb='16px'
+            <HStack
+                alignItems="center"
+                py="3"
             >
-                <Center>
+                <Box
+                    h='55' w='55'
+                    borderRadius={90}
+                    marginRight="3"
+                    bg = {bg} 
+                    borderWidth="2"
+                    borderColor="primary"
+                >
                     <Text
-                    // pos="fixed" bottom= "0"
-                    fontSize={24}
-                    textAlign="center"
-                    >{rank}</Text>
-                </Center>
-            </Box>
-            <Box
-            >
-                 <Text >{item.shop_name}</Text>
-                <Text >{item.introduction}</Text>
-            </Box>
+                        fontSize= "2xl"
+                        fontWeight= "bold"
+                        lineHeight= "2xl"
+                        color= "black"
+                        textAlign= "center"
+                    >
+                        {rank}
+                    </Text>
+                </Box>
+                <Box
+                >
+                    <Text fontSize="xl" fontWeight="bold">{item.shop_name}</Text>
+                    <Text >{item.introduction}</Text>
+                </Box>
+            </HStack>
         </Pressable>
     );
 }

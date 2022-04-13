@@ -1,5 +1,5 @@
 import React from 'react';
-import { Center, Box , ScrollView,  Text, Pressable ,VStack, Input,StatusBar ,useColorMode,useColorModeValue} from "native-base";
+import { Center, Box , ScrollView,  Text, Pressable ,VStack, Input,StatusBar ,useColorMode,useColorModeValue, useTheme} from "native-base";
 import { TabView, SceneMap } from "react-native-tab-view";
 import { Dimensions ,TouchableOpacity, Animated } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
@@ -9,16 +9,23 @@ import MoreScreen from './MoreScreen';
 import users from "../json/user.json";
 import MyTheme from "../Theme";
 
-import TopTab from '../navigation/TopTabs';
 
-const Tab = createMaterialTopTabNavigator();
+//import TopTab from '../navigation/TopTabs';
 
-const FirstRoute = () => <Center flex={1} my="4">
+//const Tab = createMaterialTopTabNavigator();
+
+//const FirstRoute = () => <Center flex={1} my="4">
+
+const FirstRoute = () => <Center flex={1} mt="10">
+
     This is Tab 1 ahhh cant find my content :((
   </Center>;
 
 const SecondRoute = () => <Center flex={1} my="4">
-    This is Tab 2
+    
+    <Box width="200" height="20" color="pink">
+      <Text color="pink">This is Tab 2</Text>
+    </Box>
   </Center>;
 
 const ThirdRoute = () => <Center flex={1} my="4">
@@ -42,6 +49,7 @@ const AddShopScreen = ({ navigation }) => {
     const handleChange = text => setValue(text);
 
     const [index, setIndex] = React.useState(0);
+
 //   const [routes] = React.useState([{
 //     key: "first",
 //     title: "已吃品項"
@@ -77,13 +85,49 @@ const AddShopScreen = ({ navigation }) => {
 //       })}
 //       </Box>;
 //   };
+
+    const [routes] = React.useState([{
+      key: "first",
+      title: "已吃品項"
+    }, {
+      key: "second",
+      title: "下次想吃"
+    }, {
+      key: "third",
+      title: "店家資訊"
+    }
+  ]);
+
+  const renderTabBar = props => {
+    const {colors} = useTheme(MyTheme);
+    const inputRange = props.navigationState.routes.map((x, i) => i);
+    return <Box flexDirection="row">
+        {props.navigationState.routes.map((route, i) => {
+        const opacity = props.position.interpolate({
+          inputRange,
+          outputRange: inputRange.map(inputIndex => inputIndex === i ? 1 : 0.5)
+        });
+        const color = index === i ? useColorModeValue(colors.primary, "pink") : useColorModeValue("grey", "grey");
+        const borderColor = index === i ? "primary" : useColorModeValue("coolGray.200", "gray.400");
+        return <Box borderBottomWidth="3" borderColor={borderColor} flex={1} alignItems="center" p="3">
+          <Pressable 
+            onPress={() => {
+              console.log(i);
+              setIndex(i);
+            }}>
+            <Animated.Text style={{color}}>{route.title}</Animated.Text>
+          </Pressable>
+        </Box>;
+      })}
+      </Box>;
+  };
+
  
     return (
         <>
         
             <ScrollView 
                 theme={MyTheme}
-                //記得改回white
                 _light={{bg:"white"}}
                 _dark={{bg:"black"}}
             >
@@ -122,7 +166,12 @@ const AddShopScreen = ({ navigation }) => {
                 {/* <TabView navigationState={{
                         index,
                         routes
-                    }} renderScene={renderScene} renderTabBar={renderTabBar} onIndexChange={setIndex} initialLayout={initialLayout} style={{
+                    }} 
+                    renderScene={renderScene} 
+                    renderTabBar={renderTabBar}
+                    onIndexChange={setIndex} 
+                    initialLayout={initialLayout} 
+                    style={{
                         marginTop: StatusBar.currentHeight
                     }} 
                 /> */}

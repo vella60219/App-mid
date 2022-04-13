@@ -39,7 +39,7 @@ const HomeScroll = ({ navigation, sections }) => {
                         renderItem={renderItem}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={ item => item.shop_id }
-                        //contentContainerStyle={{ }}
+                        contentContainerStyle={{ paddingTop: 8 }}
                     />
         </>
     );

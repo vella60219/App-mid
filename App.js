@@ -5,6 +5,7 @@ import Navigation from "./src/navigation";
 
 import MyTheme from "./src/Theme";
 
+
 export default function App() {
   return (
     <SafeAreaProvider>

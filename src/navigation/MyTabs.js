@@ -15,13 +15,12 @@ import MyTheme from "../Theme";
 
 const Tab = createBottomTabNavigator();
 
-
 const MyTabs = () => {
-  const {colors} = useTheme();
+  const {colors} = useTheme(MyTheme);
     return (
       <Tab.Navigator
         screenOptions={{
-            tabBarActiveTintColor: MyTheme.primary ,
+            tabBarActiveTintColor: "colors.primary" ,
             tabBarInactiveTintColor: "grey",
             headerShown: false,
           // headerShown: false

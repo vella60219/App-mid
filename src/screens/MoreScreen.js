@@ -8,10 +8,7 @@ const MoreScreen = () => {
             _light={{bg:"white"}}
             _dark={{bg:"black"}}
         >
-            <Center flex={1}>
-                <Text fontSize={30}>
-                    This is MoreScreen Page
-                </Text>             
+            <Center flex={1}>           
                 <HStack 
                     justifyContent="space-around" 
                     alignItems ="center" 

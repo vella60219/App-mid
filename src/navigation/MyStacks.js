@@ -1,8 +1,8 @@
 import React from "react";
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { TouchableOpacity } from 'react-native';
 import { useTheme } from '@react-navigation/native';
+import {Button} from 'native-base';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -13,6 +13,7 @@ import HomeScreen from "../screens/HomeScreen";
 import ShopScreen from  "../screens/ShopScreen";
 import ShopDetailScreen from "../screens/ShopDetailScreen";
 import AddShopScreen from "../screens/AddShopScreen";
+import MoreScreen from "../screens/MoreScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,13 +28,13 @@ export const HomeStack = ({navigation ,props }) => {
                 component={MyTabs}
                 options={{
                   headerShown: false,
-                    headerShadowVisible:false,
-                    title: null,
-                    headerStyle:{
-                        elevation: 0,
-                        shadowOpacity: 0,
-                        shadowOffset:{height: 0, width: 0},
-                    },
+                  headerShadowVisible:false,
+                  title: null,
+                  headerStyle:{
+                      elevation: 0,
+                      shadowOpacity: 0,
+                      shadowOffset:{height: 0, width: 0},
+                  },
 
                 }}
                 
@@ -69,13 +70,13 @@ export const HomeStack = ({navigation ,props }) => {
                         shadowOpacity: 0,
                         shadowOffset:0,
                     },
-                    headerLeft: () => (
-                      <TouchableOpacity 
+                    // headerLeft: () => (
+                    //   <TouchableOpacity 
                         // onPress={() => navigation.goBack()}
-                      >
-                         <Ionicons name="chevron-back" color={colors.primary} size={25} />
-                      </TouchableOpacity>
-                    ),
+                    //   >
+                    //      <Ionicons name="chevron-back" color={colors.primary} size={25} />
+                    //   </TouchableOpacity>
+                    // ),
                   })
                 }
             />
@@ -83,7 +84,6 @@ export const HomeStack = ({navigation ,props }) => {
         </Stack.Navigator>
       );
 };
-
 
 //search bar 之後再解決，可能找個新套件
 export const ShopStack = () => {
@@ -111,3 +111,26 @@ export const ShopStack = () => {
     </Stack.Navigator>
     );
 };
+
+// export const MoreStack = () => {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen
+//         name="More"
+//         component={MoreScreen}
+//         options={{
+//           headerShown: true,
+//           headerShadowVisible:false,
+//           headerBackground:"transparent",
+//           headerRight: () => (
+//             <Button
+//               onPress={() => alert('This is a button!')}
+//               title="Info"
+//               color="#fff"
+//             />
+//           ),
+//         }}
+//       />
+//     </Stack.Navigator>
+//     );
+// };
