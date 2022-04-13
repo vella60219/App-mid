@@ -29,7 +29,7 @@ export const ShopListItem = ({ navigation, item }) => {
         >
             <Pressable 
             // h='146' w='146'
-                w={250}
+                w={240}
                 onPress={() => navigation.navigate('Shop', item)}
             >
                 <Text
@@ -109,6 +109,7 @@ export const DishListItem = ({ navigation, item }) => {
                     <Flex
                         flexDirection="column"
                         alignItems="center"
+                        justifyContent="space-around"
                     >
                         <Image
                             h='130' w='130'
@@ -146,8 +147,8 @@ export const DishListItem = ({ navigation, item }) => {
                         </Flex>
                     </Flex>
                     <Box
-                        marginLeft="3.5"
-                        w={205}
+                        margin="3.5"
+                        w="50%"
                     >
                         <Text
                             fontSize="2xl"
@@ -214,6 +215,7 @@ export const WishListItem = ({ navigation, item }) => {
                 fontSize="xl"
                 letterSpacing='1.2'
                 fontWeight="bold"
+                mb="3"
                 // color={colors.black}
             >{item.name}</Text>
             <Flex 
@@ -227,7 +229,7 @@ export const WishListItem = ({ navigation, item }) => {
                     borderColor= {colors.primary}
                     marginRight="1"
                     my="1"
-                    marginTop="3"
+                    // marginTop="3"
                 >
                     <FontAwesome
                         name= 'dollar-sign'
