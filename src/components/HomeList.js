@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Text } from "native-base";
+import { Box, Text ,useTheme } from "native-base";
 import { FlatList } from "react-native";
 
 import { RecentEatItem, MostShopItem } from "./HomeListItem";
-
+import MyTheme from "../Theme";
 
 export const RecentEatList = ({ navigation, sections }) => {
+    const {colors} = useTheme(MyTheme);
     var i =1;
 
     const renderItem = ( {item} ) => {
@@ -41,7 +42,7 @@ export const RecentEatList = ({ navigation, sections }) => {
 
 
 export const MostShopList = ({ navigation, sections }) => {
-    
+    const {colors} = useTheme(MyTheme);
     var i =1;
 
     const renderItem = ( {item} ) => {
@@ -59,7 +60,7 @@ export const MostShopList = ({ navigation, sections }) => {
         <Box>
          <Text mx={5} fontSize="2xl">排行榜</Text>
             <Box
-                borderWidth={2} borderRadius={25} borderColor="primary"
+                borderWidth={2} borderRadius={25} borderColor= {colors.primary}
                 mx={10} my={5} px={10} py={5}
             >
             
@@ -69,7 +70,6 @@ export const MostShopList = ({ navigation, sections }) => {
                         renderItem={renderItem}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={ item => item.shop_id }
-                        // contentContainerStyle={{}}
                     />
             </Box>
         </Box>

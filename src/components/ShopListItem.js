@@ -246,8 +246,10 @@ export const AddItem = ({ navigation, mode }) => {
     const {colors} = useTheme(MyTheme);
     return (
         <Pressable 
-        borderWidth={2} borderRadius={15}
-        px={18.85} py={11}
+            borderWidth={2} 
+            borderRadius={25}
+            py="8"
+            mx="2" my="5"
             // onPress={() => navigation.navigate('Shop', item)}
         >
             <Center>

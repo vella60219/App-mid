@@ -17,29 +17,26 @@ const Tab = createMaterialTopTabNavigator();
 
 
 const AddShopScreen = ({ navigation }) => {
+    const {colors} = useTheme(MyTheme);
     let user = users[0];
     const [value, setValue] = React.useState("");
     const handleChange = text => setValue(text);
 
-    const [index, setIndex] = React.useState(0);
-
-
  
     return (
         <>
-        
             <ScrollView 
                 theme={MyTheme}
-                _light={{bg:"white"}}
-                _dark={{bg:"black"}}
+                _light={{bg: colors.white}}
+                _dark={{bg: colors.black}}
             >
                 <Center
-                    mt={3}
+                    padding ="3"
                 >
                     <Input 
                         value={value} 
                         w="60%" maxW="300px" 
-                        px={10} py={2}
+                        px={10} py={2} my="2"
                         onChangeText={handleChange} 
                         placeholder="編輯店名" 
                         variant="filled"
@@ -47,12 +44,12 @@ const AddShopScreen = ({ navigation }) => {
                         borderRadius={15}
                         fontSize="3xl"
                         textAlign="center"
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.primary}}
                     />
                     <Input 
                         value={value} 
                         w="85%" 
-                        px={5} py={2} mt={2}
+                        px={5} py={2} my={2}
                         onChangeText={handleChange} 
                         placeholder="編輯描述" 
                         variant="filled"
@@ -61,13 +58,13 @@ const AddShopScreen = ({ navigation }) => {
                         fontSize="xl"
                         textAlign="center"
                         numberOfLines={2}
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.primary}}
                     />
-                    <EditTag bg={true} />
+                    <EditTag bg={true}/>
                 </Center>
-                  <Box flex={1} height={800}>
+                <Box flex={1} height={800}>
                     <TopTab navigation={navigation} shop={0} mode="add" />
-                    </Box>
+                </Box>
 
             </ScrollView>
         </>
