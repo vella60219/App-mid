@@ -10,27 +10,27 @@ import users from "../json/user.json";
 import MyTheme from "../Theme";
 
 
-//import TopTab from '../navigation/TopTabs';
+import TopTab from '../navigation/TopTabs';
 
-//const Tab = createMaterialTopTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
-//const FirstRoute = () => <Center flex={1} my="4">
 
-const FirstRoute = () => <Center flex={1} mt="10">
 
-    This is Tab 1 ahhh cant find my content :((
-  </Center>;
+// const FirstRoute = () => <Center flex={1} mt="10">
 
-const SecondRoute = () => <Center flex={1} my="4">
+//     This is Tab 1 ahhh cant find my content :((
+//   </Center>;
+
+// const SecondRoute = () => <Center flex={1} my="4">
     
-    <Box width="200" height="20" color="pink">
-      <Text color="pink">This is Tab 2</Text>
-    </Box>
-  </Center>;
+//     <Box width="200" height="20" color="pink">
+//       <Text color="pink">This is Tab 2</Text>
+//     </Box>
+//   </Center>;
 
-const ThirdRoute = () => <Center flex={1} my="4">
-    This is Tab 3
-  </Center>;
+// const ThirdRoute = () => <Center flex={1} my="4">
+//     This is Tab 3
+//   </Center>;
 
 
 // const initialLayout = {
@@ -86,41 +86,6 @@ const AddShopScreen = ({ navigation }) => {
 //       </Box>;
 //   };
 
-    const [routes] = React.useState([{
-      key: "first",
-      title: "已吃品項"
-    }, {
-      key: "second",
-      title: "下次想吃"
-    }, {
-      key: "third",
-      title: "店家資訊"
-    }
-  ]);
-
-  const renderTabBar = props => {
-    const {colors} = useTheme(MyTheme);
-    const inputRange = props.navigationState.routes.map((x, i) => i);
-    return <Box flexDirection="row">
-        {props.navigationState.routes.map((route, i) => {
-        const opacity = props.position.interpolate({
-          inputRange,
-          outputRange: inputRange.map(inputIndex => inputIndex === i ? 1 : 0.5)
-        });
-        const color = index === i ? useColorModeValue(colors.primary, "pink") : useColorModeValue("grey", "grey");
-        const borderColor = index === i ? "primary" : useColorModeValue("coolGray.200", "gray.400");
-        return <Box borderBottomWidth="3" borderColor={borderColor} flex={1} alignItems="center" p="3">
-          <Pressable 
-            onPress={() => {
-              console.log(i);
-              setIndex(i);
-            }}>
-            <Animated.Text style={{color}}>{route.title}</Animated.Text>
-          </Pressable>
-        </Box>;
-      })}
-      </Box>;
-  };
 
  
     return (
@@ -176,7 +141,7 @@ const AddShopScreen = ({ navigation }) => {
                     }} 
                 /> */}
                   <Box flex={1} height={800}>
-                    <TopTab/>
+                    <TopTab navigation={navigation} shop={0} mode="add" />
                     </Box>
 
                 {/* <Pressable

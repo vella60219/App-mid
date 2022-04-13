@@ -5,6 +5,7 @@ import { Dimensions ,TouchableOpacity, Animated } from "react-native";
 
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
+import { AddItem } from '../components/ShopListItem';
 import { DishList, WishList } from '../components/ShopList';
 import { ShopInfo } from '../components/ShopInfo';
 
@@ -16,20 +17,45 @@ import sections from "../json/user.json";
 
 const Tab = createMaterialTopTabNavigator();
 
-const TopTab = ({navigation, shop}) => {
+const TopTab = ({navigation, shop, mode}) => {
+  var FirstRoute, SecondRoute, ThirdRoute;
 
-    const FirstRoute = () =>
-      <DishList navigation={navigation} sections={user.dish_data} shop={shop}  />
+  var user = sections[0];
+
+  switch (mode) {
+    case 'show':
+      FirstRoute = () =>
+        <DishList navigation={navigation} sections={user.dish_data} shop={shop}  />
+
+      SecondRoute = () => 
+        <WishList navigation={navigation} sections={user.dish_data} shop={shop}  />
+
+      ThirdRoute = () => 
+        <ShopInfo navigation={navigation} shop={shop} />
+        
+      break;
+
+      case 'add':
+      FirstRoute = () =>
+        <AddItem navigation={navigation} mode="add"  />
+
+      SecondRoute = () => 
+        <AddItem navigation={navigation} mode="add" />
+
+      ThirdRoute = () => 
+      <Center flex={1} mt="10">
+        This is Tab 1 ahhh cant find my content :((
+      </Center>;
+        // <ShopInfo navigation={navigation} shop={shop} />
+        
+      break;
+  
+    default:
+      break;
+  }
+     
 
 
-const SecondRoute = () => 
-      <WishList navigation={navigation} sections={user.dish_data} shop={shop}  />
-
-
-const ThirdRoute = () => 
-      <ShopInfo navigation={navigation} shop={shop} />
-
-var user = sections[0];
 
     return (
         <Tab.Navigator
