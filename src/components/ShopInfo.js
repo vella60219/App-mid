@@ -1,5 +1,5 @@
 import react from "react";
-import { Box, Text, Input, VStack,useTheme } from "native-base";
+import { Box, Text, Input, VStack,useTheme, ScrollView } from "native-base";
 
 import users from "../json/user.json"
 import MyTheme from "../Theme";
@@ -11,8 +11,11 @@ export const ShopInfo = ({ nevigation, shop }) => {
     var data = user.shop_data[shop-1];
     return (
         <>
-        <Box
+        <ScrollView
             padding="5"
+            flex={1}
+            _light={{bg:"white"}}
+            _dark={{bg:"black"}}
         >
             <Box mb="5">
                 <Text
@@ -54,7 +57,7 @@ export const ShopInfo = ({ nevigation, shop }) => {
                     letterSpacing={1.1}
                 >{data.detail}</Text>
             </Box>
-        </Box>
+        </ScrollView>
         </>
     );
 }
@@ -65,7 +68,11 @@ export const EditShopInfo = ({ nevigation,}) => {
     // var data = user.shop_data[shop-1];
     return (
         <>
-        <VStack m={22}>
+        <ScrollView
+            p={22} flex={1}
+            _light={{bg:"white"}}
+            _dark={{bg:"black"}}>
+        <VStack>
             <VStack>
                 <Text>地址</Text>
                 <Box alignItems="center">
@@ -107,6 +114,7 @@ export const EditShopInfo = ({ nevigation,}) => {
                 </Box>
             </VStack>
         </VStack>
+        </ScrollView>
         </>
     );
 }

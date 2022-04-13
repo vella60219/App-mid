@@ -12,6 +12,8 @@ const MyTheme =  extendTheme({
      black:'#343434',
      grey:'#949494',
      white:'#FAFAFA',
+     item_dark:'rgba(250,250,250,0.15)',
+     tag_dark:'rgba(250,250,250,0.85)',
     //  background: '#131313',
     },
     //字體 

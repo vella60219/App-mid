@@ -22,6 +22,8 @@ export const ShopListItem = ({ navigation, item }) => {
             py="3"
             my="1" 
             justifyContent="space-around"
+            _light={{bg:"white"}}
+            _dark={{bg:"item_dark"}}
         >
             <Pressable 
             // h='146' w='146'
@@ -92,6 +94,8 @@ export const DishListItem = ({ navigation, item }) => {
                 borderWidth={2} 
                 borderRadius={15}
                 borderColor={colors.primary} 
+                _light={{bg:"white"}}
+                _dark={{bg:"item_dark"}}
                 px={18.85} py={11}
                 my="1"
                 onPress={() => navigation.navigate('Shop', item)}
@@ -200,13 +204,15 @@ export const WishListItem = ({ navigation, item }) => {
             px={18.85} py="3"
             mx="3" my="1"
             borderColor={colors.primary} 
+            _light={{bg:"white"}}
+            _dark={{bg:"item_dark"}}
             onPress={() => navigation.navigate('Shop', item)}
         >
             <Text
                 fontSize="xl"
                 letterSpacing='1.2'
                 fontWeight="bold"
-                color={colors.black}
+                // color={colors.black}
             >{item.name}</Text>
             <Flex 
                 flexDirection="row" 

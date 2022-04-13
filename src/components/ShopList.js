@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Flex, useTheme, useColorMode } from "native-base";
+import { Box, Text, Flex, useTheme, useColorMode, Center } from "native-base";
 import { FlatList } from "react-native";
 
 import { ShopListItem, DishListItem, WishListItem } from "./ShopListItem";
@@ -73,12 +73,16 @@ export const DishList = ({ navigation, sections, shop }) => {
     };
 
     return (
-        <Box flex={1}> 
+        <Box flex={1}
+        _light={{bg:"white"}}
+        _dark={{bg:"black"}}
+        > 
             <FlatList
                     horizontal={false}
                     data={space}
                     renderItem={renderItem}
                     //ListHeaderComponent={renderSectionHeader}
+                    ListEmptyComponent={ListEmptyComponent}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.id }
                     contentContainerStyle={{padding:20 ,paddingTop: 20,
@@ -88,6 +92,14 @@ export const DishList = ({ navigation, sections, shop }) => {
         </Box>
     );
 };
+
+const ListEmptyComponent = () => {
+    return (
+        <Center>
+            <Text>目前沒有任何紀錄！</Text>
+        </Center>
+    );
+}
 
 export const WishList = ({ navigation, sections, shop }) => {
     
@@ -108,14 +120,26 @@ export const WishList = ({ navigation, sections, shop }) => {
         );
     };
 
+    const ListEmptyComponent = () => {
+        return (
+            <Center>
+                <Text>目前沒有任何紀錄！</Text>
+            </Center>
+        );
+    }
+
     return (
-        <Box flex={1}>
+        <Box flex={1}
+        _light={{bg:"white"}}
+        _dark={{bg:"black"}}
+        >
             <FlatList
                     horizontal={false}
                     data={space}
                     renderItem={renderItem}
                     //ListHeaderComponent={renderSectionHeader}
                     showsHorizontalScrollIndicator={false}
+                    ListEmptyComponent={ListEmptyComponent}
                     keyExtractor={ item => item.id }
                     contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15,
                         backgroundColor: colorMode == 'light' ? colors.white : colors.black

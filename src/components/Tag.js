@@ -14,7 +14,8 @@ export const ShopTag = ( {content, bg  } ) => {
         <>
             <Center
                 // flex={1}
-                bg= {bgColor} 
+                _light={{bg:"white"}}
+                _dark={{bg:"tag_dark"}}
                 borderRadius={22.5}
                 // marginX='auto' 
                 px="2"
