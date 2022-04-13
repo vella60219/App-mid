@@ -12,7 +12,7 @@ const MyTheme =  extendTheme({
      black:'#343434',
      grey:'#949494',
      white:'#FAFAFA',
-   //   background: '#4DC5D6',
+    //  background: '#131313',
     },
     //字體 
     // fontSizes 

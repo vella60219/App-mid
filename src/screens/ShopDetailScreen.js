@@ -1,13 +1,13 @@
 import React from 'react';
-import { Center, Text, ScrollView, Flex } from "native-base";
+import { Center, Text, ScrollView, Box ,useTheme } from "native-base";
 
 import ActionButton from '../components/ActionButton';
 import sections from "../json/user.json";
-
-import { ShopTag, EditTag } from '../components/Tag';
 import { TagList } from '../components/TagList';
+import MyTheme from "../Theme";
 
 const ShopDetailScreen = ({ navigation, route }) => {
+    const {colors} = useTheme(MyTheme);
     const {
         shop_id,
     } = route.params;
@@ -18,18 +18,25 @@ const ShopDetailScreen = ({ navigation, route }) => {
 
     return (
         <>
-            <ScrollView>
-                <Center bg="white" flex={1}>
-                    <Text>{shop.shop_name}</Text>
-                    <Text>{shop.introduction}</Text>
-
-                </Center>
-                    <TagList navigation={navigation} sections={shop.tag_data} edit={true} bg={false} />
-            </ScrollView>
+            <Box
+                bgColor={colors.white}
+                flex={1}
+                flexDirection="column"
+                alignItems="center"
+            >
+                <Text 
+                    fontSize="4xl" 
+                    fontWeight="bold"
+                >{shop.shop_name}</Text>
+                <Text                    
+                    fontSize="2xl"
+                >{shop.introduction}</Text>
+                <TagList navigation={navigation} sections={shop.tag_data} edit={true} bg={false} />
+            </Box>
 
             <ActionButton
-                        navigation={navigation}
-                        mode="edit"
+                navigation={navigation}
+                mode="edit"
             />
         </>
     );

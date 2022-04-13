@@ -1,8 +1,10 @@
 import React from 'react';
-import { Center, Text, Image, Pressable, Box, Flex, HStack } from "native-base";
+import { useTheme, Text, Image, Pressable, Box, Flex, HStack } from "native-base";
 // import LinearGradient from 'react-native-linear-gradient'; // import LinearGradient
+import MyTheme from "../Theme";
 
 export const RecentEatItem = ({ navigation, item }) => {
+    const {colors} = useTheme(MyTheme);
     return (
         <Pressable 
             h='160' w='160'
@@ -20,14 +22,14 @@ export const RecentEatItem = ({ navigation, item }) => {
                 bottom= "55"
                 left="3"
             >
-                <Text fontSize="md" color="white">{item.date}</Text>
+                <Text fontSize="md" color={colors.white} >{item.date}</Text>
                 <Flex flexDirection="row" alignItems="center">
                     <Image
                         source= {require("../img/icon_location.png")}
                         alt=" "
                         mr="1"
                     />
-                    <Text fontSize="md" lineHeight="md" color="white">{item.city}</Text>
+                    <Text fontSize="md" lineHeight="md" color={colors.white} >{item.city}</Text>
                 </Flex>
             </Box>
         </Pressable>
@@ -35,8 +37,10 @@ export const RecentEatItem = ({ navigation, item }) => {
 }
 
 export const MostShopItem = ({ navigation, item , rank}) => {
-    var bg;
-    {(rank == 1)? (bg="primary"): (bg="transparent")}
+    const {colors} = useTheme(MyTheme);
+    var bg,textColor; 
+    {(rank == 1)? (bg=colors.primary,textColor= colors.black ): (bg="transparent",textColor=colors.grey)}
+
     return (
         <Pressable 
             display="flex" 
@@ -59,7 +63,7 @@ export const MostShopItem = ({ navigation, item , rank}) => {
                         fontSize= "2xl"
                         fontWeight= "bold"
                         lineHeight= "2xl"
-                        color= "black"
+                        color= {textColor}
                         textAlign= "center"
                     >
                         {rank}

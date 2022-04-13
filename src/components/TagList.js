@@ -71,19 +71,20 @@ export const TagList = ({ navigation, sections, edit, bg }) => {
             >
             
                 <FlatList
-                        scrollEnabled={false}
-                        horizontal={true}
-                        data={sections}
-                        // numColumns={5}
-                        renderItem={renderItem}
-                        ListFooterComponent={ListFooterComponent}
-                        
-                        showsHorizontalScrollIndicator={false}
-                        keyExtractor={ item => item }
-                        contentContainerStyle={{
-                            paddingTop: 8, paddingLeft: 15, paddingRight: 15,
-                        }}
-                    />
+                    scrollEnabled={false}
+                    horizontal={true}
+                    data={sections}
+                    // numColumns={5}
+                    renderItem={renderItem}
+                    ListFooterComponent={ListFooterComponent}
+                    
+                    showsHorizontalScrollIndicator={false}
+                    keyExtractor={ item => item }
+                    contentContainerStyle={{
+                        marginTop:1,
+                        paddingTop: 8,
+                    }}
+                />
             </Box>
         </>
     );

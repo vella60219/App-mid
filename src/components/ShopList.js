@@ -7,14 +7,13 @@ import { ShopTag } from './Tag';
 
 import users from "../json/user.json";
 
-export const ShopList = ({ navigation, }) => {
-
+export const ShopList = ({ navigation }) => {
     var user = users[0];
 
     const renderItem = ( {item} ) => {
         return (
             <>
-                <ShopListItem navigation={navigation}  item={item} />
+                <ShopListItem navigation={navigation} item={item} />
                  
             </>
         );
@@ -22,8 +21,14 @@ export const ShopList = ({ navigation, }) => {
 
     const renderSectionHeader = () => {
         return (
-            <Flex flexDirection='row' >
-                <Text>我的店家</Text>
+            <Flex 
+                flex={1}
+                flexDirection='row'
+                justifyContent="flex-start"
+                alignItems="center"
+                my="3"
+            >
+                <Text fontSize="2xl">我的店家</Text>
                 <ShopTag content="tag" bg={true} />
             </Flex>  
         );
@@ -38,7 +43,7 @@ export const ShopList = ({ navigation, }) => {
                     ListHeaderComponent={renderSectionHeader}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.shop_id }
-                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+                    contentContainerStyle={{padding:25}}
                 />
         </Box>
     );

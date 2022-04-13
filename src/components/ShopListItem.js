@@ -1,93 +1,77 @@
 import React from 'react';
-import { ScrollView, Center, Text, Image, Pressable, Box, Flex } from "native-base";
-
-import { ShopTag } from './Tag';
-import { TagList } from './TagList';
-import StarButton from './StarButton';
-
+import { useTheme, Center, Text, Pressable, Box, Flex } from "native-base";
 import StarRating from 'react-native-star-rating';
 
+import { TagList } from './TagList';
+import StarButton from './StarButton';
+import MyTheme from "../Theme";
 
 export const ShopListItem = ({ navigation, item }) => {
-
+    const {colors} = useTheme(MyTheme);
     return (
-        <Flex flexDirection='row'
-            borderWidth={2} borderRadius={15}
+        <Flex 
+            flexDirection='row'
+            borderColor= "primary"
+            borderWidth={2} 
+            borderRadius={15}
             px={18.85} py={11}
+            my="1"
         >
             <Pressable 
             // h='146' w='146'
                 onPress={() => navigation.navigate('Shop', item)}
             >
-                <Text>{item.shop_name}</Text>
-                <Flex flexDirection="row" >
-                     <StarRating
+                <Text fontSize="2xl">{item.shop_name}</Text>
+                <Flex 
+                    flex={1}
+                    flexDirection="row" 
+                    justifyContent ="flex-start"
+                    alignItems="center"
+                >
+                    <StarRating
                         disabled={true}
                         maxStars={5}
                         rating={item.rate}
-                        fullStarColor={'primary'}
+                        fullStarColor={colors.pink}
                         fullStar = {"heart"}
                         emptyStar = {"heart-outline"}
-                        emptyStarColor={'primary'}
+                        emptyStarColor={colors.pink}
                         halfStar = {"heart-half-full"}
-                        halfStarColor = {'primary'}
+                        halfStarColor = {colors.pink}
                         halfStarEnabled = {true}
-                        starSize={10}
-                        containerStyle={{justifyContent: "flex-start", marginBottom: 8.5}}
+                        starSize={20}
+                        containerStyle={{justifyContent: "flex-start",marginTop:14}}
                         starStyle={{marginRight: 4}}
                         iconSet={"MaterialCommunityIcons"}
                     />
                     <Text
-                        fontSize='12'
-                        fontWeight='400'
-                        letterSpacing='1.2'
-                        // color='grey'
+                        fontSize="md"
+                        fontWeight="light"
+                        letterSpacing='1'
+                        color='grey'
+                        marginTop='3'
                     >{item.rate}</Text>
                     <Text
-                        fontSize='12'
-                        fontWeight='400'
-                        letterSpacing='1.2'
-                        // color='grey'
-                    > / 5</Text>
+                        fontSize="md"
+                        fontWeight="light"
+                        letterSpacing='1'
+                        marginTop='3'
+                        color='grey'
+                    >/5</Text>
                 </Flex>
                 <TagList navigation={navigation} sections={item.tag_data} edit={false} bg={true} />
                 <Text
-                        fontSize='12'
-                        letterSpacing='1.2'
-                    >{item.introduction}</Text>
+                    fontSize="md"
+                    letterSpacing='1.2'
+                    marginTop='1'
+                >{item.introduction}</Text>
             </Pressable>
-            <Center><StarButton/></Center>
+            <Box 
+                flex={1}
+                justifyContent="center"
+                alignItems="center"
+            ><StarButton/></Box>
         </Flex>
     );
 }
 
-
-
-
-export const MostShopItem = ({ navigation, item , rank}) => {
-
-    return (
-        <Pressable display="flex" flexDirection="row"
-            onPress={() => navigation.navigate('Shop', item)}
-        >
-            <Box
-                h='49' w='49' bg="primary"
-                borderRadius={90}
-                mb='16px'
-            >
-                <Center>
-                    <Text
-                    // pos="fixed" bottom= "0"
-                    fontSize={24}
-                    textAlign="center"
-                    >{rank}</Text>
-                </Center>
-            </Box>
-            <Box
-            >
-                 <Text >{item.shop_name}</Text>
-                <Text >{item.introduction}</Text>
-            </Box>
-        </Pressable>
-    );
-}
