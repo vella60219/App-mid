@@ -47,6 +47,7 @@ const AddShopScreen = ({ navigation }) => {
                         borderRadius={15}
                         fontSize="3xl"
                         textAlign="center"
+                        _focus={{borderColor:"primary"}}
                     />
                     <Input 
                         value={value} 
@@ -60,6 +61,7 @@ const AddShopScreen = ({ navigation }) => {
                         fontSize="xl"
                         textAlign="center"
                         numberOfLines={2}
+                        _focus={{borderColor:"primary"}}
                     />
                     <EditTag bg={true} />
                 </Center>
