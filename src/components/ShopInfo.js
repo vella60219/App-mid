@@ -12,7 +12,7 @@ export const ShopInfo = ({ nevigation, shop }) => {
     return (
         <>
         <ScrollView
-            padding="5"
+            padding="6"
             flex={1}
             _light={{bg:"white"}}
             _dark={{bg:"black"}}
