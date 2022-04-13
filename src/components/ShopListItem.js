@@ -29,7 +29,7 @@ export const ShopListItem = ({ navigation, item }) => {
         >
             <Pressable 
             // h='146' w='146'
-                w={240}
+                w={250}
                 onPress={() => navigation.navigate('Shop', item)}
             >
                 <Text
