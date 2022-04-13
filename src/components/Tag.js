@@ -26,10 +26,10 @@ export const ShopTag = ( {content, bg  } ) => {
                 borderColor ="tag"
             >
                 <Text
-                    color = {colors.black}
                     fontSize="sm" 
                     lineHeight="sm" 
                     textAlign="center"
+                    color={colors.black}
                 >＃{content}</Text>
             </Center>
         </>
@@ -64,8 +64,10 @@ export const EditTag = () => {
                 <Text 
                     fontSize="md" 
                     lineHeight="md" 
+                    color= {colors.black} 
                 >Tag</Text>
             </Center>
         </Pressable>
     );
 };
+

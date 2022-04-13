@@ -74,7 +74,7 @@ export const DishList = ({ navigation, sections, shop }) => {
                     //ListHeaderComponent={renderSectionHeader}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.id }
-                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+                    contentContainerStyle={{padding:20 ,paddingTop: 20 }}
                 />
         </Box>
     );
