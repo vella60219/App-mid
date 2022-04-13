@@ -20,8 +20,8 @@ const MyTabs = () => {
     return (
       <Tab.Navigator
         screenOptions={{
-            tabBarActiveTintColor: "colors.primary" ,
-            tabBarInactiveTintColor: "grey",
+            tabBarActiveTintColor: colors.primary ,
+            tabBarInactiveTintColor: colors.grey,
             headerShown: false,
           // headerShown: false
             tabBarLabelStyle: {
@@ -36,6 +36,8 @@ const MyTabs = () => {
             tabBarStyle:{
               height:56,
               paddingBottom: 5,
+              // _light:{backgroundColor: colors.white},
+              // _dark:{backgroundColor: colors.black}
             },
             // headerStyle: { 
             //     headerShadowVisible: false,
@@ -70,7 +72,7 @@ const MyTabs = () => {
           name="ShopStack" 
           component={ShopScreen}
           options={{
-            headerShown: true,
+            headerShown: false,
             headerTitle: " ",
             tabBarLabel: "我的店家",
             tabBarIcon: ({ color }) => (
