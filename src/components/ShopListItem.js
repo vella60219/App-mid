@@ -25,6 +25,7 @@ export const ShopListItem = ({ navigation, item }) => {
         >
             <Pressable 
             // h='146' w='146'
+                w={250}
                 onPress={() => navigation.navigate('Shop', item)}
             >
                 <Text
@@ -64,9 +65,12 @@ export const ShopListItem = ({ navigation, item }) => {
                         letterSpacing='1'
                         color='grey'
                         marginTop ="3"
+                        textAlign="center"
                     >/5</Text>
                 </Flex>
+                <Flex flex={1} alignItems='flex-start' >
                 <TagList navigation={navigation} sections={item.tag_data} edit={false} bg={true} />
+                </Flex>
                 <Text
                     fontSize="md"
                     letterSpacing='1.2'
@@ -137,6 +141,7 @@ export const DishListItem = ({ navigation, item }) => {
                     </Flex>
                     <Box
                         marginLeft="3.5"
+                        w={205}
                     >
                         <Text
                             fontSize="2xl"
