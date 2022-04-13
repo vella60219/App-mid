@@ -86,31 +86,31 @@ export const HomeStack = ({navigation ,props }) => {
 };
 
 //search bar 之後再解決，可能找個新套件
-export const ShopStack = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Shop"
-        component={ShopScreen}
-        options={{
-          title: null,
-          headerStyle:{
-              // elevation: 0,
-              // shadowOpacity: 0,
-              // shadowOffset:{height: 0, width: 0},
-          },
-          searchBar: 0,
-          headerSearchBarOptions: {
-              autoCapitalize: 'none',
-              obscureBackground: true,
-              onCancelButtonPress: false,
-              hideWhenScrolling: false,
-          },
-        }}
-      />
-    </Stack.Navigator>
-    );
-};
+// export const ShopStack = () => {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen
+//         name="Shop"
+//         component={ShopScreen}
+//         options={{
+//           title: null,
+//           headerStyle:{
+//               // elevation: 0,
+//               // shadowOpacity: 0,
+//               // shadowOffset:{height: 0, width: 0},
+//           },
+//           searchBar: 0,
+//           headerSearchBarOptions: {
+//               autoCapitalize: 'none',
+//               obscureBackground: true,
+//               onCancelButtonPress: false,
+//               hideWhenScrolling: false,
+//           },
+//         }}
+//       />
+//     </Stack.Navigator>
+//     );
+// };
 
 // export const MoreStack = () => {
 //   return (
