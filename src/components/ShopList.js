@@ -1,14 +1,18 @@
 import React from "react";
-import { Box, Text, Flex } from "native-base";
+import { Box, Text, Flex, useTheme, useColorMode } from "native-base";
 import { FlatList } from "react-native";
 
 import { ShopListItem, DishListItem, WishListItem } from "./ShopListItem";
 import { ShopTag } from './Tag';
 
+import MyTheme from "../Theme";
 import users from "../json/user.json";
+import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 export const ShopList = ({ navigation }) => {
     var user = users[0];
+    const {colors} = useTheme(MyTheme);
+    const {colorMode} =useColorMode(MyTheme)
 
     const renderItem = ( {item} ) => {
         return (
@@ -42,7 +46,7 @@ export const ShopList = ({ navigation }) => {
                     ListHeaderComponent={renderSectionHeader}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.shop_id }
-                    contentContainerStyle={{padding:25}}
+                    contentContainerStyle={{padding:25 ,backgroundColor:'transparent'}}
                 />
         </Box>
     );
@@ -50,6 +54,9 @@ export const ShopList = ({ navigation }) => {
 
 
 export const DishList = ({ navigation, sections, shop }) => {
+
+    const {colors} = useTheme(MyTheme);
+    const {colorMode} =useColorMode(MyTheme)
 
     var user = users[0];
     var dish_count = user.dish_data.length;
@@ -74,13 +81,19 @@ export const DishList = ({ navigation, sections, shop }) => {
                     //ListHeaderComponent={renderSectionHeader}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.id }
-                    contentContainerStyle={{padding:20 ,paddingTop: 20 }}
+                    contentContainerStyle={{padding:20 ,paddingTop: 20,
+                        backgroundColor: colorMode == 'light' ? colors.white : colors.black
+                    }}
                 />
         </Box>
     );
 };
 
 export const WishList = ({ navigation, sections, shop }) => {
+    
+    const {colors} = useTheme(MyTheme);
+    const {colorMode} =useColorMode(MyTheme)
+
     var user = users[0];
     var dish_count = user.dish_data.length;
 
@@ -104,7 +117,10 @@ export const WishList = ({ navigation, sections, shop }) => {
                     //ListHeaderComponent={renderSectionHeader}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.id }
-                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15,
+                        backgroundColor: colorMode == 'light' ? colors.white : colors.black
+
+                    }}
                 />
         </Box>
     );
