@@ -20,8 +20,8 @@ const MyTabs = () => {
     return (
       <Tab.Navigator
         screenOptions={{
-            tabBarActiveTintColor: "colors.primary" ,
-            tabBarInactiveTintColor: "grey",
+            tabBarActiveTintColor: colors.primary ,
+            tabBarInactiveTintColor: colors.grey,
             headerShown: false,
           // headerShown: false
             tabBarLabelStyle: {
@@ -36,15 +36,17 @@ const MyTabs = () => {
             tabBarStyle:{
               height:56,
               paddingBottom: 5,
+              // _light:{backgroundColor: colors.white},
+              // _dark:{backgroundColor: colors.black}
             },
-            headerStyle: { 
-                headerShadowVisible: false,
-                shadowColor: 'transparent',
-                elevation: 0,
-                shadowOpacity: 0,
-                shadowOffset:{height: 0, width: 0},
-                borderBottomColor: 'transparent',
-              },
+            // headerStyle: { 
+            //     headerShadowVisible: false,
+            //     shadowColor: 'transparent',
+            //     elevation: 0,
+            //     shadowOpacity: 0,
+            //     shadowOffset:{height: 0, width: 0},
+            //     borderBottomColor: 'transparent',
+            //   },
         }}
       >
         <Tab.Screen 
@@ -56,6 +58,14 @@ const MyTabs = () => {
             tabBarIcon: ({ color }) => (
               <Ionicons name="home" color={color} size={22} />
             ),
+            headerStyle: { 
+              headerShadowVisible: false,
+              shadowColor: 'transparent',
+              elevation: 0,
+              shadowOpacity: 0,
+              shadowOffset:{height: 0, width: 0},
+              borderBottomColor: 'transparent',
+            },
           }}
         />
         <Tab.Screen 
@@ -63,10 +73,18 @@ const MyTabs = () => {
           component={ShopScreen}
           options={{
             headerShown: false,
-            title: "我的店家",
+            headerTitle: " ",
+            tabBarLabel: "我的店家",
             tabBarIcon: ({ color }) => (
               <Ionicons name="ios-restaurant" color={color} size={22} />
             ),
+            searchBar: 0,
+            headerSearchBarOptions: {
+                autoCapitalize: 'none',
+                obscureBackground: true,
+                onCancelButtonPress: false,
+                hideWhenScrolling: false,
+            },
           }}
         />
         <Tab.Screen 
@@ -82,6 +100,14 @@ const MyTabs = () => {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="folder-star-multiple" color={color} size={22} />
             ),
+            headerStyle: { 
+              headerShadowVisible: false,
+              shadowColor: 'transparent',
+              elevation: 0,
+              shadowOpacity: 0,
+              shadowOffset:{height: 0, width: 0},
+              borderBottomColor: 'transparent',
+            },
           }}
         />
         <Tab.Screen 
@@ -97,6 +123,14 @@ const MyTabs = () => {
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="more-horiz" color={color} size={22} />
             ),
+            headerStyle: { 
+              headerShadowVisible: false,
+              shadowColor: 'transparent',
+              elevation: 0,
+              shadowOpacity: 0,
+              shadowOffset:{height: 0, width: 0},
+              borderBottomColor: 'transparent',
+            },
           }}
         />
       </Tab.Navigator>
