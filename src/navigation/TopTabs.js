@@ -87,7 +87,7 @@ const TopTab = ({navigation, shop, mode}) => {
           backgroundColor: colorMode == 'light' ? colors.white : colors.black
         },
         tabBarContentContainerStyle: {
-          backgroundColor: colorMode == 'light' ? colors.white : colors.black
+          // backgroundColor: colorMode == 'light' ? colors.white : colors.black
         },
         initialLayout: { width: Dimensions.get('window').width },
       }}>
