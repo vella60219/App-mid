@@ -1,29 +1,58 @@
 import react from "react";
-import { Box, Text, Input, VStack } from "native-base";
+import { Box, Text, Input, VStack,useTheme } from "native-base";
 
 import users from "../json/user.json"
+import MyTheme from "../Theme";
+
 
 export const ShopInfo = ({ nevigation, shop }) => {
+    const {colors} = useTheme(MyTheme);
     var user = users[0];
     var data = user.shop_data[shop-1];
     return (
         <>
-        <Box>
-            <Box>
-                <Text>地址</Text>
-                <Text>{data.address}</Text>
+        <Box
+            padding="5"
+        >
+            <Box mb="5">
+                <Text
+                    fontSize="md"
+                    color={colors.grey}
+                >地址</Text>
+                <Text
+                    fontSize="md"
+                    letterSpacing={1.1}
+                >{data.address}</Text>
             </Box>
-            <Box>
-                <Text>營業時間</Text>
-                <Text>{data.open_time}</Text>
+            <Box mb="5">
+                <Text
+                    fontSize="md"
+                    color={colors.grey}
+                >營業時間</Text>
+                <Text
+                    fontSize="md"
+                    letterSpacing={1.1}
+                >{data.open_time}</Text>
             </Box>
-            <Box>
-                <Text>電話</Text>
-                <Text>{data.phone_number}</Text>
+            <Box mb="5">
+                <Text
+                    fontSize="md"
+                    color={colors.grey}
+                >電話</Text>
+                <Text
+                    fontSize="md"
+                    letterSpacing={1.1}
+                >{data.phone_number}</Text>
             </Box>
-            <Box>
-                <Text>更多資訊</Text>
-                <Text>{data.detail}</Text>
+            <Box mb="5">
+                <Text
+                    fontSize="md"
+                    color={colors.grey}
+                >更多資訊</Text>
+                <Text
+                    fontSize="md"
+                    letterSpacing={1.1}
+                >{data.detail}</Text>
             </Box>
         </Box>
         </>
@@ -31,6 +60,7 @@ export const ShopInfo = ({ nevigation, shop }) => {
 }
 
 export const EditShopInfo = ({ nevigation,}) => {
+    const {colors} = useTheme(MyTheme);
     var user = users[0];
     // var data = user.shop_data[shop-1];
     return (
@@ -42,7 +72,7 @@ export const EditShopInfo = ({ nevigation,}) => {
                     <Input 
                         mx="3" placeholder="Ex: 臺北市信義區信義路五段7號" w="100%"
                         variant="filled"
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.pr}}
                     />
                 </Box>
             </VStack>
