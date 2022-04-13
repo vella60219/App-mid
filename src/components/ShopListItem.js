@@ -18,6 +18,8 @@ export const ShopListItem = ({ navigation, item }) => {
             borderWidth={2} 
             borderRadius={15}
             borderColor={colors.primary}
+            _light={{bg: colors.white }}
+            _dark={{bg: "gray.800" }}
             px="0"
             py="3"
             my="1" 

@@ -12,7 +12,7 @@ export const ShopInfo = ({ nevigation, shop }) => {
     return (
         <>
         <Box
-            padding="5"
+            padding="6"
         >
             <Box mb="5">
                 <Text
