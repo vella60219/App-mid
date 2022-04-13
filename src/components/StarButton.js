@@ -17,14 +17,14 @@ export default class StarButton extends Component {
             this.setState(
                 {
                     name: 1,
-                    iconName: "star", iconColor: '#6200EE'
+                    iconName: "star", iconColor: '#4DC5D6'
                 }
             );
         } else {
             this.setState(
                 {
                     name: 0,
-                    iconName: "star-o", iconColor: '#131313'
+                    iconName: "star-o", iconColor: 'transparent'
                 }
             );
         }
