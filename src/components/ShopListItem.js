@@ -7,6 +7,8 @@ import StarButton from './StarButton';
 
 import StarRating from 'react-native-star-rating';
 
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+
 
 export const ShopListItem = ({ navigation, item }) => {
 
@@ -64,30 +66,121 @@ export const ShopListItem = ({ navigation, item }) => {
 
 
 
-export const MostShopItem = ({ navigation, item , rank}) => {
+export const DishListItem = ({ navigation, item }) => {
 
     return (
-        <Pressable display="flex" flexDirection="row"
+            <Pressable 
+            flexDirection='row'
+            borderWidth={2} borderRadius={15}
+            px={18.85} py={11}
+                onPress={() => navigation.navigate('Shop', item)}
+            >
+                <Flex flexDirection="row" >
+                    <Box>
+                        <Image
+                            h='146' w='146'
+                            borderRadius={15}
+                            mb='16px'
+                            source={{uri: item.photo}}
+                            alt="圖片"
+                        />
+                        <Flex flexDirection="row" >
+                            <Center 
+                                w="15" h="15"
+                                borderWidth={1.5} borderRadius={90} borderColor="primary" >
+                            <FontAwesome
+                            name= 'dollar-sign'
+                            size={9}
+                            style={{
+                                color: "primary", 
+                            }} 
+                        />
+                            </Center>
+                        
+                            <Text
+                                    fontSize='12'
+                                    fontWeight='400'
+                                    letterSpacing='1.2'
+                                    // color='grey'
+                                >{item.price}</Text>
+                        </Flex>
+                    </Box>
+                    <Box>
+                        <Text>{item.name}</Text>
+                        <Flex flexDirection="row" >
+                            <StarRating
+                                disabled={true}
+                                maxStars={5}
+                                rating={item.rate}
+                                fullStarColor={'primary'}
+                                fullStar = {"heart"}
+                                emptyStar = {"heart-outline"}
+                                emptyStarColor={'primary'}
+                                halfStar = {"heart-half-full"}
+                                halfStarColor = {'primary'}
+                                halfStarEnabled = {true}
+                                starSize={10}
+                                containerStyle={{justifyContent: "flex-start", marginBottom: 8.5}}
+                                starStyle={{marginRight: 4}}
+                                iconSet={"MaterialCommunityIcons"}
+                            />
+                            <Text
+                                fontSize='12'
+                                fontWeight='400'
+                                letterSpacing='1.2'
+                                // color='grey'
+                            >{item.rate}</Text>
+                            <Text
+                                fontSize='12'
+                                fontWeight='400'
+                                letterSpacing='1.2'
+                                // color='grey'
+                            > / 5</Text>
+                        </Flex>
+                        <Text
+                            fontSize='12'
+                            letterSpacing='1.2'
+                        >{item.detail}</Text>
+                    </Box>
+                </Flex>
+            </Pressable>
+    );
+}
+
+
+export const WishListItem = ({ navigation, item }) => {
+
+    return (
+        <Pressable 
+        borderWidth={2} borderRadius={15}
+        px={18.85} py={11}
             onPress={() => navigation.navigate('Shop', item)}
         >
-            <Box
-                h='49' w='49' bg="primary"
-                borderRadius={90}
-                mb='16px'
-            >
-                <Center>
+                    <Text>{item.name}</Text>
+                    <Flex flexDirection="row" >
+                        <Center 
+                            w="15" h="15"
+                            borderWidth={1.5} borderRadius={90} borderColor="primary" >
+                        <FontAwesome
+                        name= 'dollar-sign'
+                        size={9}
+                        style={{
+                            color: "primary", 
+                        }} 
+                    />
+                        </Center>
+                    
+                        <Text
+                                fontSize='12'
+                                fontWeight='400'
+                                letterSpacing='1.2'
+                                // color='grey'
+                            >{item.price}</Text>
+                    </Flex>
                     <Text
-                    // pos="fixed" bottom= "0"
-                    fontSize={24}
-                    textAlign="center"
-                    >{rank}</Text>
-                </Center>
-            </Box>
-            <Box
-            >
-                 <Text >{item.shop_name}</Text>
-                <Text >{item.introduction}</Text>
-            </Box>
+                        fontSize='12'
+                        letterSpacing='1.2'
+                    >{item.detail}</Text>
         </Pressable>
     );
 }
