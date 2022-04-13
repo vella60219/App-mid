@@ -6,7 +6,6 @@ import { RecentEatItem, MostShopItem } from "./HomeListItem";
 
 
 export const RecentEatList = ({ navigation, sections }) => {
-    
     var i =1;
 
     const renderItem = ( {item} ) => {
@@ -17,20 +16,22 @@ export const RecentEatList = ({ navigation, sections }) => {
             ):null}
                  
             </>
-        );
+        ); 
     };
 
     return (
-        <Box >
-            <Text>近期吃</Text>
-            <FlatList
-                    horizontal={true}
-                    data={sections.dish_data}
-                    renderItem={renderItem}
-                    showsHorizontalScrollIndicator={false}
-                    keyExtractor={ item => item.id }
-                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+        <Box my={5}>
+            <Text mx={5} fontSize="2xl">近期吃</Text>
+            <Box my={5}>
+                <FlatList
+                        horizontal={true}
+                        data={sections.dish_data}
+                        renderItem={renderItem}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={ item => item.id }
+                        contentContainerStyle={{paddingLeft: 20 }}
                 />
+            </Box>
         </Box>
     );
 };
@@ -55,11 +56,11 @@ export const MostShopList = ({ navigation, sections }) => {
     };
 
     return (
-        <>
-         <Text>排行榜</Text>
+        <Box>
+         <Text mx={5} fontSize="2xl">排行榜</Text>
             <Box
-                borderWidth={2} borderRadius={15}
-                mx={21} px="38.75" py={26}
+                borderWidth={2} borderRadius={25} borderColor="primary"
+                mx={10} my={5} px={10} py={5}
             >
             
                 <FlatList
@@ -68,9 +69,9 @@ export const MostShopList = ({ navigation, sections }) => {
                         renderItem={renderItem}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={ item => item.shop_id }
-                        contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+                        // contentContainerStyle={{}}
                     />
             </Box>
-        </>
+        </Box>
     );
 };

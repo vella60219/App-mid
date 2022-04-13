@@ -1,6 +1,12 @@
 import React from "react";
 import { Flex, Center, Text, ScrollView, Pressable} from "native-base";
 
+import { ShopTag } from "../components/Tag";
+
+import { ShopListItem } from "../components/ShopListItem";
+
+import { ShopList } from "../components/ShopList";
+
 import ActionButton from "../components/ActionButton";
 
 import users from "../json/user.json";
@@ -10,15 +16,7 @@ const ShopScreen = ({ navigation }) => {
     var user = users[0];
     return(
         <>
-            <ScrollView bgColor="white">
-                <Center flex={1}>
-                    <Text fontSize={30}>
-                        This is ShopScreen Page
-                    </Text>              
-            </Center>
-            
-            {/* <TestList navigation={navigation} sections={user} /> */}
-            </ScrollView>
+            <ShopList navigation={navigation} />
             <ActionButton navigation={navigation}/>
         </>
     );

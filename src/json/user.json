@@ -10,6 +10,7 @@
             {
                 "shop_id": "1",
                 "shop_name": "店名",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -23,6 +24,7 @@
             {
                 "shop_id": "2",
                 "shop_name": "店名2",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶!",
@@ -36,6 +38,7 @@
             {
                 "shop_id": "3",
                 "shop_name": "店名3",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -49,6 +52,7 @@
             {
                 "shop_id": "4",
                 "shop_name": "店名4",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -62,6 +66,7 @@
             {
                 "shop_id": "5",
                 "shop_name": "店名5",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -75,6 +80,7 @@
             {
                 "shop_id": "6",
                 "shop_name": "店名6",
+                "rate": 3.2,
                 "dish_count": 3,
                 "favorite": false,
                 "introduction": "好耶！",
@@ -151,6 +157,58 @@
                 "date": "2022/04/06",
                 "city": "台北",
                 "rate": 3.2,
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+                
+            }
+        ],
+        "wish_data": [
+            {
+                "id": "1",
+                "name": "品項",
+                "shop_id": "1",
+                "city": "台北",
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+            },
+            {
+                "id": "2",
+                "name": "品項2",
+                "shop_id": "2",
+                "city": "台北",
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+                
+            },
+            {
+                "id": "3",
+                "name": "品項3",
+                "shop_id": "1",
+                "city": "台北",
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+            },
+            {
+                "id": "4",
+                "name": "品項4",
+                "shop_id": "2",
+                "city": "台北",
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+                
+            }, {
+                "id": "5",
+                "name": "品項5",
+                "shop_id": "1",
+                "city": "台北",
+                "price": 2333,
+                "detail": "好吃好吃好吃好吃"
+            },
+            {
+                "id": "6",
+                "name": "品項6",
+                "shop_id": "2",
+                "city": "台北",
                 "price": 2333,
                 "detail": "好吃好吃好吃好吃"
                 
