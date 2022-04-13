@@ -8,6 +8,7 @@ import StarButton from './StarButton';
 import StarRating from 'react-native-star-rating';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 
 export const ShopListItem = ({ navigation, item }) => {
@@ -181,6 +182,25 @@ export const WishListItem = ({ navigation, item }) => {
                         fontSize='12'
                         letterSpacing='1.2'
                     >{item.detail}</Text>
+        </Pressable>
+    );
+}
+
+
+
+
+
+export const AddItem = ({ navigation, mode }) => {
+
+    return (
+        <Pressable 
+        borderWidth={2} borderRadius={15}
+        px={18.85} py={11}
+            // onPress={() => navigation.navigate('Shop', item)}
+        >
+            <Center>
+                <Octicons name="plus" color="black" size={32} />
+            </Center>
         </Pressable>
     );
 }

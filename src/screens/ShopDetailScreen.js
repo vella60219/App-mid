@@ -30,7 +30,7 @@ const ShopDetailScreen = ({ navigation, route }) => {
                 </Center>
                     <TagList navigation={navigation} sections={shop.tag_data} edit={true} bg={false} />
                     <Box flex={1} height={800}>
-                    <TopTab navigation={navigation} shop={shop_id} />
+                    <TopTab navigation={navigation} shop={shop_id} mode="show" />
                     </Box>
                     
                     {/* </ScrollView> */}
