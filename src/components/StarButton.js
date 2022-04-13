@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { Button } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-
-
 export default class StarButton extends Component {
   
     state = {
         name:0,
-        iconName: "star-o", iconColor: '#131313'
+        iconName: "star-o", iconColor: '#4DC5D6'
     }
 
     call = ()=>{
@@ -17,14 +15,14 @@ export default class StarButton extends Component {
             this.setState(
                 {
                     name: 1,
-                    iconName: "star", iconColor: '#6200EE'
+                    iconName: "star", iconColor: '#4DC5D6'
                 }
             );
         } else {
             this.setState(
                 {
                     name: 0,
-                    iconName: "star-o", iconColor: '#131313'
+                    iconName: "star-o", iconColor: '#4DC5D6'
                 }
             );
         }

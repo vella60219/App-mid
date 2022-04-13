@@ -1,46 +1,69 @@
 import react from "react";
 
-import { Text, Center, Pressable, Box } from "native-base";
+import { Text, Center, Pressable, useTheme } from "native-base";
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import MyTheme from "../Theme";
+
 export const ShopTag = ( {content, bg  } ) => {
+    const {colors} = useTheme(MyTheme);
     var bgColor;
     {bg? ( bgColor="tag" ) : ( bgColor="transparent" )};
     return (
         <>
             <Center
-                bg= {bgColor} borderRadius={22.5}
-                marginX='auto' px='2' py='0.5'
+                flex={1}
+                bg= {bgColor} 
+                borderRadius={22.5}
+                // marginX='auto' 
+                px="2.5"
+                py="1.2"
+                marginRight="1.5"
+                h="30"
+                borderWidth ="2"
+                borderColor ="tag"
             >
-            <Text
-                fontSize={15}
-                textAlign="center"
-            >＃ {content}</Text>
+                <Text
+                    fontSize="md" 
+                    lineHeight="md" 
+                    textAlign="center"
+                >＃{content}</Text>
             </Center>
         </>
     );
 };
 
 export const EditTag = () => {
+    const {colors} = useTheme(MyTheme);
     return (
-        <Pressable>
-            <Center
-            w={60} h={22}
-            flexDirection="row"
-            bg="tag" borderRadius={22.5}
+        <Pressable
         >
-            <MaterialCommunityIcons
+            <Center
+                w={60} h="30"
+                flexDirection="row"
+                bg="tag" 
+                borderRadius={22.5}
+                px="2.5"
+                py="1.2"
+                mx="1"
+                borderWidth ="2"
+                borderColor ="tag"
+             >
+                <MaterialCommunityIcons
                     name= {"tag-outline"}
                     size={15}
                     style={{
-                        color: "black", 
+                        color: colors.black, 
                         marginRight: 2.5,
                         transform: [{rotateY: "180deg"}]
                     }} 
                 />
-        <Text>Tag</Text>
-    </Center>
+                <Text 
+                    fontSize="md" 
+                    lineHeight="md" 
+                >Tag</Text>
+            </Center>
         </Pressable>
     );
 };

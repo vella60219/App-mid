@@ -1,4 +1,4 @@
-import { useTheme } from 'native-base';
+import { Box, useTheme } from 'native-base';
 import React from 'react';
 
 import ActionButton from "../components/ActionButton";
@@ -8,21 +8,21 @@ import users from "../json/user.json";
 import MyTheme from "../Theme";
 
 const HomeScreen = ({ navigation }) => {
-    const {colors} = useTheme();
+    const {colors} = useTheme(MyTheme);
     let user = users[0];
     return (
-        <>
+        <Box
+            theme={MyTheme}
+            _light={{bg: colors.white }}
+            _dark={{bg: colors.black}}
+        >
             <HomeScroll
-                theme={MyTheme}
-                //記得改回white
-                _light={{bg:"white"}}
-                _dark={{bg:"black"}}
-
-                navigation={navigation} sections={user} 
+                navigation={navigation} 
+                sections={user} 
             />
 
             <ActionButton navigation={navigation} />
-        </>
+        </Box>
     );
 }
 
