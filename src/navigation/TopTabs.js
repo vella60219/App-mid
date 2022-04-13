@@ -5,15 +5,21 @@ import { Dimensions ,TouchableOpacity, Animated } from "react-native";
 
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-import users from "../json/user.json";
-import MyTheme from "../Theme";
+import { DishList } from '../components/ShopList';
 
-import MoreScreen from '../screens/MoreScreen';
+
 import ShopScreen from '../screens/ShopScreen';
 
-const FirstRoute = () => <Center flex={1} my="4">
-    This is Tab 1 ahhh cant find my content :((
-  </Center>;
+import sections from "../json/user.json";
+
+
+const Tab = createMaterialTopTabNavigator();
+
+const TopTab = ({navigation, shop}) => {
+
+    const FirstRoute = () =>
+             <DishList navigation={navigation} sections={user.dish_data} shop={shop}  />
+
 
 const SecondRoute = () => <Center flex={1} my="4">
     This is Tab 2
@@ -23,9 +29,8 @@ const ThirdRoute = () => <Center flex={1} my="4">
     This is Tab 3
   </Center>;
 
-const Tab = createMaterialTopTabNavigator();
+var user = sections[0];
 
-const TopTab = () => {
     return (
         <Tab.Navigator
               initialRouteName="shop"
@@ -40,7 +45,7 @@ const TopTab = () => {
                 tabBarStyle: { backgroundColor: "#fff" },
                 initialLayout: { width: Dimensions.get('window').width },
               }}>
-              <Tab.Screen name="shop" id="eat" component={MoreScreen}  />
+              <Tab.Screen name="shop" id="eat" component={FirstRoute}  />
               <Tab.Screen name="Personal" id="wish" component={SecondRoute} />
             </Tab.Navigator>
     );
