@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text } from "native-base";
+import { Box, Center, Text } from "native-base";
 import { FlatList } from "react-native";
 
 import { ShopTag, EditTag } from "./Tag";
@@ -30,7 +30,10 @@ export const CenEditTagList = ({ navigation, sections }) => {
                 renderItem={renderItem}
                 showsHorizontalScrollIndicator={false}
                 keyExtractor={ item => item }
-                contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+                contentContainerStyle={{
+                    flex:1,
+                    alignItems:"center"
+                }}
             />
         </Box>
     );
@@ -66,10 +69,7 @@ export const TagList = ({ navigation, sections, edit, bg }) => {
 
     return (
         <>
-            <Box
-//                mx={21} px="38.75" py={26}
-            >
-            
+            <Center>         
                 <FlatList
                     scrollEnabled={false}
                     horizontal={true}
@@ -82,10 +82,11 @@ export const TagList = ({ navigation, sections, edit, bg }) => {
                     keyExtractor={ item => item }
                     contentContainerStyle={{
                         marginTop:1,
+                        marginBottom:5,
                         paddingTop: 8,
                     }}
                 />
-            </Box>
+            </Center>
         </>
     );
 };

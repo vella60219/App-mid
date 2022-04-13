@@ -81,78 +81,104 @@ export const ShopListItem = ({ navigation, item }) => {
 
 
 export const DishListItem = ({ navigation, item }) => {
-
+    const {colors} = useTheme(MyTheme);
     return (
             <Pressable 
                 flexDirection='row'
-                borderWidth={2} borderRadius={15}
+                borderWidth={2} 
+                borderRadius={15}
+                borderColor={colors.primary} 
                 px={18.85} py={11}
+                my="1"
                 onPress={() => navigation.navigate('Shop', item)}
             >
-                <Flex flexDirection="row" >
-                    <Box>
+                <Flex 
+                    flexDirection="row" 
+                    justifyContent="space-around"
+                >
+                    <Flex
+                        flexDirection="column"
+                        alignItems="center"
+                    >
                         <Image
-                            h='146' w='146'
+                            h='130' w='130'
                             borderRadius={15}
-                            mb='16px'
+                            mb="2"
                             source={{uri: item.photo}}
                             alt="圖片"
                         />
-                        <Flex flexDirection="row" >
+                        <Flex 
+                            flexDirection="row" 
+                            justifyContent="center"
+                            alignItems="center"
+                        >
                             <Center 
                                 w="15" h="15"
-                                borderWidth={1.5} borderRadius={90} borderColor="primary" >
-                            <FontAwesome
-                                name= 'dollar-sign'
-                                size={9}
-                                style={{
-                                    color: "primary", 
-                                }} 
-                            />
+                                marginRight="2"
+                                borderWidth={1.5} 
+                                borderRadius={90} 
+                                borderColor={colors.primary} 
+                            >
+                                <FontAwesome
+                                    name= 'dollar-sign'
+                                    size={9}
+                                    style={{
+                                        color: colors.primary, 
+                                    }} 
+                                />
                             </Center>                      
                             <Text
-                                fontSize='12'
+                                fontSize="sm"
                                 fontWeight='400'
                                 letterSpacing='1.2'
-                                // color='grey'
+                                color={colors.grey}
                             >{item.price}</Text>
                         </Flex>
-                    </Box>
-                    <Box>
-                        <Text>{item.name}</Text>
-                        <Flex flexDirection="row" >
+                    </Flex>
+                    <Box
+                        marginLeft="3.5"
+                    >
+                        <Text
+                            fontSize="2xl"
+                            letterSpacing={1.1}
+                        >{item.name}</Text>
+                        <Flex 
+                            flexDirection="row"
+                            alignItems="center" 
+                        >
                             <StarRating
                                 disabled={true}
                                 maxStars={5}
                                 rating={item.rate}
-                                fullStarColor={'primary'}
+                                fullStarColor={colors.pink}
                                 fullStar = {"heart"}
                                 emptyStar = {"heart-outline"}
-                                emptyStarColor={'primary'}
+                                emptyStarColor={colors.pink}
                                 halfStar = {"heart-half-full"}
-                                halfStarColor = {'primary'}
+                                halfStarColor = {colors.pink}
                                 halfStarEnabled = {true}
-                                starSize={10}
-                                containerStyle={{justifyContent: "flex-start", marginBottom: 8.5}}
+                                starSize={20}
+                                containerStyle={{justifyContent: "flex-start", marginTop: 13}}
                                 starStyle={{marginRight: 4}}
                                 iconSet={"MaterialCommunityIcons"}
                             />
                             <Text
-                                fontSize='12'
-                                fontWeight='400'
+                                fontSize="md"
                                 letterSpacing='1.2'
-                                // color='grey'
+                                color={colors.grey}
+                                marginTop ="3"
                             >{item.rate}</Text>
                             <Text
-                                fontSize='12'
-                                fontWeight='400'
-                                letterSpacing='1.2'
-                                // color='grey'
-                            > / 5</Text>
+                                fontSize="md"
+                                letterSpacing='1'
+                                color={colors.grey}
+                                marginTop ="3"
+                            >/5</Text>
                         </Flex>
                         <Text
-                            fontSize='12'
-                            letterSpacing='1.2'
+                            fontSize="md"
+                            letterSpacing='1'
+                            color={colors.black}
                         >{item.detail}</Text>
                     </Box>
                 </Flex>
@@ -162,38 +188,53 @@ export const DishListItem = ({ navigation, item }) => {
 
 
 export const WishListItem = ({ navigation, item }) => {
-
+    const {colors} = useTheme(MyTheme);
     return (
         <Pressable 
-        borderWidth={2} borderRadius={15}
-        px={18.85} py={11}
+            borderWidth={2} 
+            borderRadius={15}
+            px={18.85} py="3"
+            mx="3" my="1"
+            borderColor={colors.primary} 
             onPress={() => navigation.navigate('Shop', item)}
         >
-                    <Text>{item.name}</Text>
-                    <Flex flexDirection="row" >
-                        <Center 
-                            w="15" h="15"
-                            borderWidth={1.5} borderRadius={90} borderColor="primary" >
-                        <FontAwesome
+            <Text
+                fontSize="xl"
+                letterSpacing='1.2'
+                fontWeight="bold"
+                color={colors.black}
+            >{item.name}</Text>
+            <Flex 
+                flexDirection="row" 
+                alignItems="center"
+            >
+                <Center 
+                    w="18" h="18"
+                    borderWidth={1.5} 
+                    borderRadius={90} 
+                    borderColor= {colors.primary}
+                    marginRight="1"
+                    my="1"
+                    marginTop="3"
+                >
+                    <FontAwesome
                         name= 'dollar-sign'
-                        size={9}
+                        size={10}
                         style={{
-                            color: "primary", 
+                            color: colors.primary, 
                         }} 
                     />
-                        </Center>
-                    
-                        <Text
-                                fontSize='12'
-                                fontWeight='400'
-                                letterSpacing='1.2'
-                                // color='grey'
-                            >{item.price}</Text>
-                    </Flex>
-                    <Text
-                        fontSize='12'
-                        letterSpacing='1.2'
-                    >{item.detail}</Text>
+                </Center>
+                <Text
+                    fontSize="md"
+                    letterSpacing='1.2'
+                    color={colors.grey}
+                >{item.price}</Text>
+            </Flex>
+            <Text
+                fontSize='12'
+                letterSpacing='1.2'
+            >{item.detail}</Text>
         </Pressable>
     );
 }
@@ -203,7 +244,7 @@ export const WishListItem = ({ navigation, item }) => {
 
 
 export const AddItem = ({ navigation, mode }) => {
-
+    const {colors} = useTheme(MyTheme);
     return (
         <Pressable 
         borderWidth={2} borderRadius={15}
@@ -211,7 +252,7 @@ export const AddItem = ({ navigation, mode }) => {
             // onPress={() => navigation.navigate('Shop', item)}
         >
             <Center>
-                <Octicons name="plus" color="black" size={32} />
+                <Octicons name="plus" color={colors.black} size={32} />
             </Center>
         </Pressable>
     );
