@@ -33,6 +33,10 @@ const MyTabs = () => {
                 marginTop: 11,
                 marginTop: 4,
             },
+            tabBarStyle:{
+              height:56,
+              paddingBottom: 5,
+            },
             headerStyle: { 
                 headerShadowVisible: false,
                 shadowColor: 'transparent',

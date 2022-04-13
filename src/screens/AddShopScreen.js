@@ -8,39 +8,12 @@ import MoreScreen from './MoreScreen';
 
 import users from "../json/user.json";
 import MyTheme from "../Theme";
-
+import { EditTag } from '../components/Tag';
 
 import TopTab from '../navigation/TopTabs';
 
 const Tab = createMaterialTopTabNavigator();
 
-
-
-// const FirstRoute = () => <Center flex={1} mt="10">
-
-//     This is Tab 1 ahhh cant find my content :((
-//   </Center>;
-
-// const SecondRoute = () => <Center flex={1} my="4">
-    
-//     <Box width="200" height="20" color="pink">
-//       <Text color="pink">This is Tab 2</Text>
-//     </Box>
-//   </Center>;
-
-// const ThirdRoute = () => <Center flex={1} my="4">
-//     This is Tab 3
-//   </Center>;
-
-
-// const initialLayout = {
-//   width: Dimensions.get("window").width
-// };
-// const renderScene = SceneMap({
-//   first: FirstRoute,
-//   second: SecondRoute,
-//   third: ThirdRoute
-// });
 
 
 const AddShopScreen = ({ navigation }) => {
@@ -49,42 +22,6 @@ const AddShopScreen = ({ navigation }) => {
     const handleChange = text => setValue(text);
 
     const [index, setIndex] = React.useState(0);
-
-//   const [routes] = React.useState([{
-//     key: "first",
-//     title: "已吃品項"
-//   }, {
-//     key: "second",
-//     title: "下次想吃"
-//   }, {
-//     key: "third",
-//     title: "店家資訊"
-//   }
-// ]);
-
-//   const renderTabBar = props => {
-//     const inputRange = props.navigationState.routes.map((x, i) => i);
-//     return <Box flexDirection="row">
-//         {props.navigationState.routes.map((route, i) => {
-//         const opacity = props.position.interpolate({
-//           inputRange,
-//           outputRange: inputRange.map(inputIndex => inputIndex === i ? 1 : 0.5)
-//         });
-//         const color = index === i ? useColorModeValue("#000", "#e5e5e5") : useColorModeValue("#1f2937", "#a1a1aa");
-//         const borderColor = index === i ? "cyan.500" : useColorModeValue("coolGray.200", "gray.400");
-//         return <Box borderBottomWidth="3" borderColor={borderColor} flex={1} alignItems="center" p="3">
-//               <Pressable onPress={() => {
-//             console.log(i);
-//             setIndex(i);
-//           }}>
-//                 <Animated.Text style={{
-//               color
-//             }}>{route.title}</Animated.Text>
-//               </Pressable>
-//             </Box>;
-//       })}
-//       </Box>;
-//   };
 
 
  
@@ -110,6 +47,7 @@ const AddShopScreen = ({ navigation }) => {
                         borderRadius={15}
                         fontSize="3xl"
                         textAlign="center"
+                        _focus={{borderColor:"primary"}}
                     />
                     <Input 
                         value={value} 
@@ -123,32 +61,14 @@ const AddShopScreen = ({ navigation }) => {
                         fontSize="xl"
                         textAlign="center"
                         numberOfLines={2}
+                        _focus={{borderColor:"primary"}}
                     />
-                    <Text fontSize="xl">
-                        Tag section
-                    </Text>
+                    <EditTag bg={true} />
                 </Center>
-                {/* <TabView navigationState={{
-                        index,
-                        routes
-                    }} 
-                    renderScene={renderScene} 
-                    renderTabBar={renderTabBar}
-                    onIndexChange={setIndex} 
-                    initialLayout={initialLayout} 
-                    style={{
-                        marginTop: StatusBar.currentHeight
-                    }} 
-                /> */}
                   <Box flex={1} height={800}>
                     <TopTab navigation={navigation} shop={0} mode="add" />
                     </Box>
 
-                {/* <Pressable
-                    onPress={() => navigation.navigate('Shop')}
-                    shadow= {2}
-                    h={100} w={100} bg="#999999"
-                ></Pressable>       */}
             </ScrollView>
         </>
 

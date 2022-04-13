@@ -7,7 +7,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 
 import { AddItem } from '../components/ShopListItem';
 import { DishList, WishList } from '../components/ShopList';
-import { ShopInfo } from '../components/ShopInfo';
+import { ShopInfo, EditShopInfo } from '../components/ShopInfo';
 
 
 import ShopScreen from '../screens/ShopScreen';
@@ -43,9 +43,7 @@ const TopTab = ({navigation, shop, mode}) => {
         <AddItem navigation={navigation} mode="add" />
 
       ThirdRoute = () => 
-      <Center flex={1} mt="10">
-        This is Tab 1 ahhh cant find my content :((
-      </Center>;
+      <EditShopInfo navigation={navigation} />
         // <ShopInfo navigation={navigation} shop={shop} />
         
       break;

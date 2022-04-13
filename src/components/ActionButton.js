@@ -1,18 +1,22 @@
 import React from "react";
 
-import { Pressable, Center } from "native-base";
+import { Pressable, Center, Box, Flex } from "native-base";
 
 import Octicons from 'react-native-vector-icons/Octicons';
 
 const ActionButton = ({ navigation, mode }) =>{
     return(
         <>
+        <Flex justifyContent="flex-end" alignItems="flex-end"
+        w="100%" h="0" 
+        pos="fixed"
+        >
         {(mode=="edit") ? (
         <Pressable
             w="60" h="60" bg="primary" mt="-60" pt="13"
             borderRadius={90}
-            pos="fixed" top="-21.5" left="345.5"
-            zIndex={2}
+            m={25} 
+            zIndex={20}
 
             // onPress={() => navigation.navigate('Shop')}
         >
@@ -23,9 +27,10 @@ const ActionButton = ({ navigation, mode }) =>{
         </Pressable> ) : (
             <Pressable
             w="60" h="60" bg="primary" mt="-60" pt="13"
+            m={25} bottom={11}
             borderRadius={90}
-            pos="fixed" top="-21.5" left="345.5"
-            zIndex={2}
+            //pos="fixed" top="-21.5" left="345.5"
+            zIndex={20}
 
             onPress={() => navigation.navigate('Add')}
         >
@@ -35,6 +40,7 @@ const ActionButton = ({ navigation, mode }) =>{
         </Pressable>
             )
                 }
+            </Flex>
         </>
     );
 };
