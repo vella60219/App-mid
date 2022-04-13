@@ -1,18 +1,15 @@
 import React from 'react';
-import { Center, Text, ScrollView, Flex, Box } from "native-base";
+import { Center, Text, useTheme, Box } from "native-base";
+import TopTab from '../navigation/TopTabs';
 
 import ActionButton from '../components/ActionButton';
 import sections from "../json/user.json";
 
-import { ShopTag, EditTag } from '../components/Tag';
 import { TagList } from '../components/TagList';
-import { DishList, } from '../components/ShopList';
-
-import { WishListItem } from '../components/ShopListItem';
-
-import TopTab from '../navigation/TopTabs';
+import MyTheme from "../Theme";
 
 const ShopDetailScreen = ({ navigation, route }) => {
+    const {colors} = useTheme(MyTheme);
     const {
         shop_id,
     } = route.params;
@@ -23,8 +20,13 @@ const ShopDetailScreen = ({ navigation, route }) => {
 
     return (
         <>
-            {/* <ScrollView> */}
-                <Center bg="white">
+        <Box
+            theme={MyTheme}
+            _light={{bg: colors.white }}
+            _dark={{bg: colors.black}}
+            h="100%"
+        >
+                <Center>
                     <Text>{shop.shop_name}</Text>
                     <Text>{shop.introduction}</Text>
                 </Center>
@@ -32,12 +34,11 @@ const ShopDetailScreen = ({ navigation, route }) => {
                     <Box flex={1} height={800}>
                     <TopTab navigation={navigation} shop={shop_id} mode="show" />
                     </Box>
-                    
-                    {/* </ScrollView> */}
-            <ActionButton
-                        navigation={navigation}
-                        mode="edit"
-            />
+                <ActionButton
+                    navigation={navigation}
+                    mode="edit"
+                />
+        </Box>
         </>
     );
 }

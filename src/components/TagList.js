@@ -25,13 +25,13 @@ export const CenEditTagList = ({ navigation, sections }) => {
         <Box >
             <Text>近期吃</Text>
             <FlatList
-                    horizontal={true}
-                    data={sections}
-                    renderItem={renderItem}
-                    showsHorizontalScrollIndicator={false}
-                    keyExtractor={ item => item }
-                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
-                />
+                horizontal={true}
+                data={sections}
+                renderItem={renderItem}
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={ item => item }
+                contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+            />
         </Box>
     );
 };

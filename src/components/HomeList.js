@@ -20,9 +20,9 @@ export const RecentEatList = ({ navigation, sections }) => {
     };
 
     return (
-        <Box my={5}>
+        <Box my={10}>
             <Text mx={5} fontSize="2xl">近期吃</Text>
-            <Box my={5}>
+            <Box mt={5}>
                 <FlatList
                         horizontal={true}
                         data={sections.dish_data}
