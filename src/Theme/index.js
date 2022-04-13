@@ -9,7 +9,7 @@ const MyTheme =  extendTheme({
      primary:'#4DC5D6',
      tag: '#BBEFEC',
      pink:'#FF8593',
-     black:'#343434',
+     black:'#131313',
      grey:'#949494',
      white:'#FAFAFA',
     //  background: '#131313',

@@ -1,24 +1,29 @@
 import React from 'react';
-import { Center, ScrollView, Switch ,useColorMode, Text ,HStack} from "native-base";
+import { Center, ScrollView, Switch ,useColorMode, Text ,HStack ,useTheme} from "native-base";
+import MyTheme from "../Theme";
 
 const MoreScreen = () => {
+    const {colors} = useTheme(MyTheme);
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <ScrollView
-            _light={{bg:"white"}}
-            _dark={{bg:"black"}}
+            _light={{bg: colors.white }}
+            _dark={{bg:colors.black }}
         >
             <Center flex={1}>           
                 <HStack 
                     justifyContent="space-around" 
                     alignItems ="center" 
-                    py={21} px={10} mt={3}
+                    px="20" py="4" mt="6"
+                    space={3}
                     borderWidth={1}
                     borderRadius={15}
                     borderColor="grey"
                 >
-                    <Text fontSize="lg">{colorMode=="light"?"Light Mode" : "Dark MOde"}</Text>
+                    <Text fontSize="xl">{colorMode=="light"?"Light Mode" : "Dark MOde"}</Text>
                     <Switch 
+                        size="lg"
+                        ml="3"
                         name="light mode"
                         isChecked={colorMode === 'dark'}
                         onToggle={toggleColorMode}

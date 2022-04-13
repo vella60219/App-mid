@@ -26,16 +26,22 @@ const ShopDetailScreen = ({ navigation, route }) => {
             _dark={{bg: colors.black}}
             h="100%"
         >
-            <Center>
-                <Text
-                    fontSize="4xl"
-                    fontWeight="bold"
-                >{shop.shop_name}</Text>
-                <Text
-                    fontSize="xl"
-                >{shop.introduction}</Text>
-            </Center>
-            <TagList navigation={navigation} sections={shop.tag_data} edit={true} bg={false} />
+            <Box
+                py="3"
+            >
+                <Center>
+                    <Text
+                        fontSize="4xl"
+                        fontWeight="bold"
+                        my="3"
+                    >{shop.shop_name}</Text>
+                    <Text
+                        fontSize="xl"
+                    >{shop.introduction}</Text>
+                </Center>
+                <TagList navigation={navigation} sections={shop.tag_data} edit={true} bg={false} />
+            </Box>
+
             <Box flex={1} height={800}>
             <TopTab navigation={navigation} shop={shop_id} mode="show" />
             </Box>
