@@ -14,7 +14,6 @@ export const ShopList = ({ navigation }) => {
         return (
             <>
                 <ShopListItem navigation={navigation} item={item} />
-                 
             </>
         );
     };
@@ -24,7 +23,7 @@ export const ShopList = ({ navigation }) => {
             <Flex 
                 flex={1}
                 flexDirection='row'
-                justifyContent="flex-start"
+                justifyContent="space-between"
                 alignItems="center"
                 my="3"
             >
@@ -50,25 +49,13 @@ export const ShopList = ({ navigation }) => {
 };
 
 
-
-
-
-
 export const DishList = ({ navigation, sections, shop }) => {
 
     var user = users[0];
     var dish_count = user.dish_data.length;
 
     const space = sections.filter(x => x.shop_id == shop );
-    // return(
-    //     <Text>{space.length}</Text>
-    // );
-    // {space.map((item) => {
-    //     return (
-    //         <DishListItem navigation={navigation} item={item} />
-    //     );
-    //   })}
-    
+
     const renderItem = ( {item} ) => {
         return (
             <>
@@ -79,7 +66,7 @@ export const DishList = ({ navigation, sections, shop }) => {
     };
 
     return (
-        <Box flex={1}>
+        <Box flex={1}> 
             <FlatList
                     horizontal={false}
                     data={space}
@@ -94,19 +81,10 @@ export const DishList = ({ navigation, sections, shop }) => {
 };
 
 export const WishList = ({ navigation, sections, shop }) => {
-
     var user = users[0];
     var dish_count = user.dish_data.length;
 
     const space = sections.filter(x => x.shop_id == shop );
-    // return(
-    //     <Text>{space.length}</Text>
-    // );
-    // {space.map((item) => {
-    //     return (
-    //         <DishListItem navigation={navigation} item={item} />
-    //     );
-    //   })}
     
     const renderItem = ( {item} ) => {
         return (

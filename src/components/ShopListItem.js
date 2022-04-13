@@ -1,65 +1,78 @@
 import React from 'react';
-import { ScrollView, Center, Text, Image, Pressable, Box, Flex } from "native-base";
+import { useTheme, Center, Text, Image, Pressable, Box, Flex } from "native-base";
 
-import { ShopTag } from './Tag';
 import { TagList } from './TagList';
 import StarButton from './StarButton';
+import MyTheme from "../Theme";
 
 import StarRating from 'react-native-star-rating';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import Octicons from 'react-native-vector-icons/Octicons';
 
-
 export const ShopListItem = ({ navigation, item }) => {
-
+    const {colors} = useTheme(MyTheme);
     return (
-        <Flex flexDirection='row'
-            borderWidth={2} borderRadius={15}
-            px={18.85} py={11}
+        <Flex 
+            flexDirection='row'
+            borderWidth={2} 
+            borderRadius={15}
+            borderColor={colors.primary}
+            px="0"
+            py="3"
+            my="1" 
+            justifyContent="space-around"
         >
             <Pressable 
             // h='146' w='146'
                 onPress={() => navigation.navigate('Shop', item)}
             >
-                <Text>{item.shop_name}</Text>
-                <Flex flexDirection="row" >
-                     <StarRating
+                <Text
+                    fontSize="xl" 
+                    fontWeight="bold"
+                >{item.shop_name}</Text>
+                <Flex 
+                    flexDirection="row"
+                    alignItems="center" 
+                >
+                    <StarRating
                         disabled={true}
                         maxStars={5}
                         rating={item.rate}
-                        fullStarColor={'primary'}
+                        fullStarColor={colors.pink}
                         fullStar = {"heart"}
                         emptyStar = {"heart-outline"}
-                        emptyStarColor={'primary'}
+                        emptyStarColor={colors.pink}
                         halfStar = {"heart-half-full"}
-                        halfStarColor = {'primary'}
+                        halfStarColor = {colors.pink}
                         halfStarEnabled = {true}
-                        starSize={10}
-                        containerStyle={{justifyContent: "flex-start", marginBottom: 8.5}}
+                        starSize={20}
+                        containerStyle={{justifyContent: "flex-start", marginTop: 13}}
                         starStyle={{marginRight: 4}}
                         iconSet={"MaterialCommunityIcons"}
                     />
                     <Text
-                        fontSize='12'
+                        fontSize="md"
                         fontWeight='400'
                         letterSpacing='1.2'
-                        // color='grey'
+                        color='grey'
+                        marginTop ="3"
                     >{item.rate}</Text>
                     <Text
-                        fontSize='12'
+                        fontSize="md"
                         fontWeight='400'
-                        letterSpacing='1.2'
-                        // color='grey'
-                    > / 5</Text>
+                        letterSpacing='1'
+                        color='grey'
+                        marginTop ="3"
+                    >/5</Text>
                 </Flex>
                 <TagList navigation={navigation} sections={item.tag_data} edit={false} bg={true} />
                 <Text
-                        fontSize='12'
-                        letterSpacing='1.2'
-                    >{item.introduction}</Text>
+                    fontSize="md"
+                    letterSpacing='1.2'
+                >{item.introduction}</Text>
             </Pressable>
-            <Center><StarButton/></Center>
+            <Center><StarButton marginRight="10" /></Center>
         </Flex>
     );
 }
@@ -71,9 +84,9 @@ export const DishListItem = ({ navigation, item }) => {
 
     return (
             <Pressable 
-            flexDirection='row'
-            borderWidth={2} borderRadius={15}
-            px={18.85} py={11}
+                flexDirection='row'
+                borderWidth={2} borderRadius={15}
+                px={18.85} py={11}
                 onPress={() => navigation.navigate('Shop', item)}
             >
                 <Flex flexDirection="row" >
@@ -90,20 +103,19 @@ export const DishListItem = ({ navigation, item }) => {
                                 w="15" h="15"
                                 borderWidth={1.5} borderRadius={90} borderColor="primary" >
                             <FontAwesome
-                            name= 'dollar-sign'
-                            size={9}
-                            style={{
-                                color: "primary", 
-                            }} 
-                        />
-                            </Center>
-                        
+                                name= 'dollar-sign'
+                                size={9}
+                                style={{
+                                    color: "primary", 
+                                }} 
+                            />
+                            </Center>                      
                             <Text
-                                    fontSize='12'
-                                    fontWeight='400'
-                                    letterSpacing='1.2'
-                                    // color='grey'
-                                >{item.price}</Text>
+                                fontSize='12'
+                                fontWeight='400'
+                                letterSpacing='1.2'
+                                // color='grey'
+                            >{item.price}</Text>
                         </Flex>
                     </Box>
                     <Box>

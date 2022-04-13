@@ -13,20 +13,22 @@ export const ShopTag = ( {content, bg  } ) => {
     return (
         <>
             <Center
-                flex={1}
+                // flex={1}
                 bg= {bgColor} 
                 borderRadius={22.5}
                 // marginX='auto' 
-                px="2.5"
-                py="1.2"
+                px="2"
+                py="1"
+                mt="0"
                 marginRight="1.5"
                 h="30"
                 borderWidth ="2"
                 borderColor ="tag"
             >
                 <Text
-                    fontSize="md" 
-                    lineHeight="md" 
+                    color = {colors.black}
+                    fontSize="sm" 
+                    lineHeight="sm" 
                     textAlign="center"
                 >＃{content}</Text>
             </Center>

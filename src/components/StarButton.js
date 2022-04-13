@@ -35,15 +35,16 @@ export default class StarButton extends Component {
                     onPress={this.call}
                     backgroundColor="transparent"
                     size="10"
-                    justifyContent='flex-end' alignItems='center'
+                    justifyContent="center"
+                    alignItems='center'
                 >
                     <FontAwesome
                         name= {this.state.iconName}
                         size={25}
                         style={{
                             color: this.state.iconColor, 
-                            margin:8,
-                            marginRight: -9,
+                            margin:0,
+                            marginRight:0,
                         }} 
                     />
                 </Button>

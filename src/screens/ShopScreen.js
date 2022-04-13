@@ -12,10 +12,15 @@ const ShopScreen = ({ navigation }) => {
     const {colors} = useTheme(MyTheme);
     var user = users[0];
     return(
-        <>
+        <Box
+            theme={MyTheme}
+            _light={{bg: colors.white }}
+            _dark={{bg: colors.black}}
+            height="100%"
+        >
             <ShopList navigation={navigation} />
             <ActionButton navigation={navigation}/>
-        </>
+        </Box>
     );
 
 };
