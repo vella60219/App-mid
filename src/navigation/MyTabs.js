@@ -37,14 +37,14 @@ const MyTabs = () => {
               height:56,
               paddingBottom: 5,
             },
-            headerStyle: { 
-                headerShadowVisible: false,
-                shadowColor: 'transparent',
-                elevation: 0,
-                shadowOpacity: 0,
-                shadowOffset:{height: 0, width: 0},
-                borderBottomColor: 'transparent',
-              },
+            // headerStyle: { 
+            //     headerShadowVisible: false,
+            //     shadowColor: 'transparent',
+            //     elevation: 0,
+            //     shadowOpacity: 0,
+            //     shadowOffset:{height: 0, width: 0},
+            //     borderBottomColor: 'transparent',
+            //   },
         }}
       >
         <Tab.Screen 
@@ -56,17 +56,33 @@ const MyTabs = () => {
             tabBarIcon: ({ color }) => (
               <Ionicons name="home" color={color} size={22} />
             ),
+            headerStyle: { 
+              headerShadowVisible: false,
+              shadowColor: 'transparent',
+              elevation: 0,
+              shadowOpacity: 0,
+              shadowOffset:{height: 0, width: 0},
+              borderBottomColor: 'transparent',
+            },
           }}
         />
         <Tab.Screen 
           name="ShopStack" 
           component={ShopScreen}
           options={{
-            headerShown: false,
-            title: "我的店家",
+            headerShown: true,
+            headerTitle: " ",
+            tabBarLabel: "我的店家",
             tabBarIcon: ({ color }) => (
               <Ionicons name="ios-restaurant" color={color} size={22} />
             ),
+            searchBar: 0,
+            headerSearchBarOptions: {
+                autoCapitalize: 'none',
+                obscureBackground: true,
+                onCancelButtonPress: false,
+                hideWhenScrolling: false,
+            },
           }}
         />
         <Tab.Screen 
@@ -82,6 +98,14 @@ const MyTabs = () => {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="folder-star-multiple" color={color} size={22} />
             ),
+            headerStyle: { 
+              headerShadowVisible: false,
+              shadowColor: 'transparent',
+              elevation: 0,
+              shadowOpacity: 0,
+              shadowOffset:{height: 0, width: 0},
+              borderBottomColor: 'transparent',
+            },
           }}
         />
         <Tab.Screen 
@@ -97,6 +121,14 @@ const MyTabs = () => {
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="more-horiz" color={color} size={22} />
             ),
+            headerStyle: { 
+              headerShadowVisible: false,
+              shadowColor: 'transparent',
+              elevation: 0,
+              shadowOpacity: 0,
+              shadowOffset:{height: 0, width: 0},
+              borderBottomColor: 'transparent',
+            },
           }}
         />
       </Tab.Navigator>
