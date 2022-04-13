@@ -7,6 +7,8 @@ import StarButton from './StarButton';
 
 import StarRating from 'react-native-star-rating';
 
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
+
 
 export const ShopListItem = ({ navigation, item }) => {
 
@@ -83,12 +85,24 @@ export const DishListItem = ({ navigation, item }) => {
                             alt="圖片"
                         />
                         <Flex flexDirection="row" >
+                            <Center 
+                                w="15" h="15"
+                                borderWidth={1.5} borderRadius={90} borderColor="primary" >
+                            <FontAwesome
+                            name= 'dollar-sign'
+                            size={9}
+                            style={{
+                                color: "primary", 
+                            }} 
+                        />
+                            </Center>
+                        
                             <Text
                                     fontSize='12'
                                     fontWeight='400'
                                     letterSpacing='1.2'
                                     // color='grey'
-                                >{item.rate}</Text>
+                                >{item.price}</Text>
                         </Flex>
                     </Box>
                     <Box>
@@ -130,5 +144,43 @@ export const DishListItem = ({ navigation, item }) => {
                     </Box>
                 </Flex>
             </Pressable>
+    );
+}
+
+
+export const WishListItem = ({ navigation, item }) => {
+
+    return (
+        <Pressable 
+        borderWidth={2} borderRadius={15}
+        px={18.85} py={11}
+            onPress={() => navigation.navigate('Shop', item)}
+        >
+                    <Text>{item.name}</Text>
+                    <Flex flexDirection="row" >
+                        <Center 
+                            w="15" h="15"
+                            borderWidth={1.5} borderRadius={90} borderColor="primary" >
+                        <FontAwesome
+                        name= 'dollar-sign'
+                        size={9}
+                        style={{
+                            color: "primary", 
+                        }} 
+                    />
+                        </Center>
+                    
+                        <Text
+                                fontSize='12'
+                                fontWeight='400'
+                                letterSpacing='1.2'
+                                // color='grey'
+                            >{item.price}</Text>
+                    </Flex>
+                    <Text
+                        fontSize='12'
+                        letterSpacing='1.2'
+                    >{item.detail}</Text>
+        </Pressable>
     );
 }

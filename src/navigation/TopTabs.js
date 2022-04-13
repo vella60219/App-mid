@@ -5,7 +5,8 @@ import { Dimensions ,TouchableOpacity, Animated } from "react-native";
 
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-import { DishList } from '../components/ShopList';
+import { DishList, WishList } from '../components/ShopList';
+import { ShopInfo } from '../components/ShopInfo';
 
 
 import ShopScreen from '../screens/ShopScreen';
@@ -18,16 +19,15 @@ const Tab = createMaterialTopTabNavigator();
 const TopTab = ({navigation, shop}) => {
 
     const FirstRoute = () =>
-             <DishList navigation={navigation} sections={user.dish_data} shop={shop}  />
+      <DishList navigation={navigation} sections={user.dish_data} shop={shop}  />
 
 
-const SecondRoute = () => <Center flex={1} my="4">
-    This is Tab 2
-  </Center>;
+const SecondRoute = () => 
+      <WishList navigation={navigation} sections={user.dish_data} shop={shop}  />
 
-const ThirdRoute = () => <Center flex={1} my="4">
-    This is Tab 3
-  </Center>;
+
+const ThirdRoute = () => 
+      <ShopInfo navigation={navigation} shop={shop} />
 
 var user = sections[0];
 
@@ -45,8 +45,9 @@ var user = sections[0];
                 tabBarStyle: { backgroundColor: "#fff" },
                 initialLayout: { width: Dimensions.get('window').width },
               }}>
-              <Tab.Screen name="shop" id="eat" component={FirstRoute}  />
-              <Tab.Screen name="Personal" id="wish" component={SecondRoute} />
+              <Tab.Screen name="已吃品項" id="dish" component={FirstRoute}  />
+              <Tab.Screen name="下次想吃" id="wish" component={SecondRoute} />
+              <Tab.Screen name="店家資訊" id="info" component={ThirdRoute} />
             </Tab.Navigator>
     );
 } 

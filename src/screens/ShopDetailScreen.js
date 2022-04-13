@@ -6,9 +6,9 @@ import sections from "../json/user.json";
 
 import { ShopTag, EditTag } from '../components/Tag';
 import { TagList } from '../components/TagList';
-import { DishList } from '../components/ShopList';
+import { DishList, } from '../components/ShopList';
 
-import { DishListItem } from '../components/ShopListItem';
+import { WishListItem } from '../components/ShopListItem';
 
 import TopTab from '../navigation/TopTabs';
 
@@ -27,7 +27,6 @@ const ShopDetailScreen = ({ navigation, route }) => {
                 <Center bg="white">
                     <Text>{shop.shop_name}</Text>
                     <Text>{shop.introduction}</Text>
-                    <DishList navigation={navigation} sections={user.dish_data} shop={shop_id}  />
                 </Center>
                     <TagList navigation={navigation} sections={shop.tag_data} edit={true} bg={false} />
                     <Box flex={1} height={800}>
