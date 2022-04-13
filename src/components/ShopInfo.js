@@ -1,5 +1,5 @@
 import react from "react";
-import { Box, Text, Input, VStack,useTheme } from "native-base";
+import { Box, Text, Input, VStack,useTheme, ScrollView } from "native-base";
 
 import users from "../json/user.json"
 import MyTheme from "../Theme";
@@ -11,8 +11,11 @@ export const ShopInfo = ({ nevigation, shop }) => {
     var data = user.shop_data[shop-1];
     return (
         <>
-        <Box
-            padding="5"
+        <ScrollView
+            padding="6"
+            flex={1}
+            _light={{bg:"white"}}
+            _dark={{bg:"black"}}
         >
             <Box mb="5">
                 <Text
@@ -54,7 +57,7 @@ export const ShopInfo = ({ nevigation, shop }) => {
                     letterSpacing={1.1}
                 >{data.detail}</Text>
             </Box>
-        </Box>
+        </ScrollView>
         </>
     );
 }
@@ -65,14 +68,18 @@ export const EditShopInfo = ({ nevigation,}) => {
     // var data = user.shop_data[shop-1];
     return (
         <>
-        <VStack m={22}>
+        <ScrollView
+            p={22} flex={1}
+            _light={{bg:"white"}}
+            _dark={{bg:"black"}}>
+        <VStack>
             <VStack>
                 <Text>地址</Text>
                 <Box alignItems="center">
                     <Input 
-                        mx="3" placeholder="Ex: 臺北市信義區信義路五段7號" w="100%"
+                        mx="3" my="1" mb="4" px="4" placeholder="Ex: 臺北市信義區信義路五段7號" w="100%"
                         variant="filled"
-                        _focus={{borderColor:colors.pr}}
+                        _focus={{borderColor:colors.primary}}
                     />
                 </Box>
             </VStack>
@@ -80,9 +87,9 @@ export const EditShopInfo = ({ nevigation,}) => {
                 <Text>營業時間</Text>
                 <Box alignItems="center">
                     <Input 
-                        mx="3" placeholder="Ex: 週一～週五 08:00~17:30" w="100%"
+                        mx="3" my="1" mb="4" px="4" placeholder="Ex: 週一～週五 08:00~17:30" w="100%"
                         variant="filled"
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.primary}}
                     />
                 </Box>
             </VStack>
@@ -90,9 +97,9 @@ export const EditShopInfo = ({ nevigation,}) => {
                 <Text>電話</Text>
                 <Box alignItems="center">
                     <Input
-                        mx="3" placeholder="02-8101-8800" w="100%" 
+                        mx="3" my="1" mb="4" px="4" placeholder="02-8101-8800" w="100%" 
                         variant="filled"
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.primary}}
                     />
                 </Box>
             </VStack>
@@ -100,13 +107,14 @@ export const EditShopInfo = ({ nevigation,}) => {
                 <Text>更多資訊</Text>
                 <Box alignItems="center">
                     <Input
-                        mx="3" placeholder="Ex: 每月一日買五送一" w="100%" h="45%"
+                        mx="3" my="1" mb="4" px="4" placeholder="Ex: 每月一日買五送一" w="100%" h="45%"
                         variant="filled"
-                        _focus={{borderColor:"primary"}}
+                        _focus={{borderColor:colors.primary}}
                     />
                 </Box>
             </VStack>
         </VStack>
+        </ScrollView>
         </>
     );
 }

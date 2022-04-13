@@ -1,14 +1,18 @@
 import React from "react";
-import { Box, Text, Flex } from "native-base";
+import { Box, Text, Flex, useTheme, useColorMode, Center } from "native-base";
 import { FlatList } from "react-native";
 
 import { ShopListItem, DishListItem, WishListItem } from "./ShopListItem";
 import { ShopTag } from './Tag';
 
+import MyTheme from "../Theme";
 import users from "../json/user.json";
+import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 export const ShopList = ({ navigation }) => {
     var user = users[0];
+    const {colors} = useTheme(MyTheme);
+    const {colorMode} =useColorMode(MyTheme)
 
     const renderItem = ( {item} ) => {
         return (
@@ -42,7 +46,7 @@ export const ShopList = ({ navigation }) => {
                     ListHeaderComponent={renderSectionHeader}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.shop_id }
-                    contentContainerStyle={{padding:25}}
+                    contentContainerStyle={{padding:25 ,backgroundColor:'transparent'}}
                 />
         </Box>
     );
@@ -50,6 +54,9 @@ export const ShopList = ({ navigation }) => {
 
 
 export const DishList = ({ navigation, sections, shop }) => {
+
+    const {colors} = useTheme(MyTheme);
+    const {colorMode} =useColorMode(MyTheme)
 
     var user = users[0];
     var dish_count = user.dish_data.length;
@@ -66,21 +73,39 @@ export const DishList = ({ navigation, sections, shop }) => {
     };
 
     return (
-        <Box flex={1}> 
+        <Box flex={1}
+        _light={{bg:"white"}}
+        _dark={{bg:"black"}}
+        > 
             <FlatList
                     horizontal={false}
                     data={space}
                     renderItem={renderItem}
                     //ListHeaderComponent={renderSectionHeader}
+                    ListEmptyComponent={ListEmptyComponent}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.id }
-                    contentContainerStyle={{padding:20 ,paddingTop: 20 }}
+                    contentContainerStyle={{padding:20 ,paddingTop: 20,
+                        backgroundColor: colorMode == 'light' ? colors.white : colors.black
+                    }}
                 />
         </Box>
     );
 };
 
+const ListEmptyComponent = () => {
+    return (
+        <Center>
+            <Text>目前沒有任何紀錄！</Text>
+        </Center>
+    );
+}
+
 export const WishList = ({ navigation, sections, shop }) => {
+    
+    const {colors} = useTheme(MyTheme);
+    const {colorMode} =useColorMode(MyTheme)
+
     var user = users[0];
     var dish_count = user.dish_data.length;
 
@@ -95,16 +120,31 @@ export const WishList = ({ navigation, sections, shop }) => {
         );
     };
 
+    const ListEmptyComponent = () => {
+        return (
+            <Center>
+                <Text>目前沒有任何紀錄！</Text>
+            </Center>
+        );
+    }
+
     return (
-        <Box flex={1}>
+        <Box flex={1}
+        _light={{bg:"white"}}
+        _dark={{bg:"black"}}
+        >
             <FlatList
                     horizontal={false}
                     data={space}
                     renderItem={renderItem}
                     //ListHeaderComponent={renderSectionHeader}
                     showsHorizontalScrollIndicator={false}
+                    ListEmptyComponent={ListEmptyComponent}
                     keyExtractor={ item => item.id }
-                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
+                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15,
+                        backgroundColor: colorMode == 'light' ? colors.white : colors.black
+
+                    }}
                 />
         </Box>
     );

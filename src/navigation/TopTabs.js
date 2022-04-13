@@ -1,5 +1,5 @@
 import React from 'react';
-import { Center, Box , ScrollView,  Text, Pressable ,VStack, Input,StatusBar ,useTheme,useColorModeValue} from "native-base";
+import { Center, Box , ScrollView,  Text, Pressable ,VStack, Input,StatusBar ,useTheme, useColorMode, Flex} from "native-base";
 import { TabView, SceneMap } from "react-native-tab-view";
 import { Dimensions ,TouchableOpacity, Animated } from "react-native";
 
@@ -15,10 +15,13 @@ import ShopScreen from '../screens/ShopScreen';
 import sections from "../json/user.json";
 import MyTheme from "../Theme";
 
+
 const Tab = createMaterialTopTabNavigator();
 
 const TopTab = ({navigation, shop, mode}) => {
   const {colors} = useTheme(MyTheme);
+  const {colorMode} =useColorMode(MyTheme)
+
   var FirstRoute, SecondRoute, ThirdRoute;
 
   var user = sections[0];
@@ -37,14 +40,24 @@ const TopTab = ({navigation, shop, mode}) => {
       break;
 
       case 'add':
-      FirstRoute = () =>
+      FirstRoute = () => 
+      <Flex flex={1}
+        _light={{bg:"white"}}
+        _dark={{bg:"black"}}
+      >
         <AddItem navigation={navigation} mode="add"  />
+      </Flex>
 
       SecondRoute = () => 
-        <AddItem navigation={navigation} mode="add" />
+      <Flex flex={1}
+        _light={{bg:"white"}}
+        _dark={{bg:"black"}}
+      >
+        <AddItem navigation={navigation} mode="add"  />
+      </Flex>
 
       ThirdRoute = () => 
-      <EditShopInfo navigation={navigation} />
+        <EditShopInfo navigation={navigation} />
         // <ShopInfo navigation={navigation} shop={shop} />
         
       break;
@@ -71,7 +84,10 @@ const TopTab = ({navigation, shop, mode}) => {
         },
         tabBarIndicatorStyle: { backgroundColor: colors.primary },
         tabBarStyle: { 
-          // backgroundColor: colors.white 
+          backgroundColor: colorMode == 'light' ? colors.white : colors.black
+        },
+        tabBarContentContainerStyle: {
+          // backgroundColor: colorMode == 'light' ? colors.white : colors.black
         },
         initialLayout: { width: Dimensions.get('window').width },
       }}>

@@ -9,12 +9,13 @@ import MyTheme from "../Theme";
 export const ShopTag = ( {content, bg  } ) => {
     const {colors} = useTheme(MyTheme);
     var bgColor;
-    {bg? ( bgColor="tag" ) : ( bgColor="transparent" )};
+    {bg? ( bgColor="tag" ) : ( bgColor= colors.white )};
     return (
         <>
             <Center
                 // flex={1}
-                bg= {bgColor} 
+                _light={{bg:"white"}}
+                _dark={{bg:"tag_dark"}}
                 borderRadius={22.5}
                 // marginX='auto' 
                 px="2"

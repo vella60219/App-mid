@@ -48,13 +48,13 @@ export const MostShopItem = ({ navigation, item , rank}) => {
             onPress={() => navigation.navigate('Shop', item)}
         >
             <HStack
-                alignItems="center"
+                alignItems="flex-start"
                 py="3"
             >
                 <Box
                     h='55' w='55'
                     borderRadius={90}
-                    marginRight="3"
+                    marginRight="5"
                     bg = {bg} 
                     borderWidth="2"
                     borderColor="primary"

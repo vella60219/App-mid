@@ -1,8 +1,8 @@
 import React from "react";
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useTheme } from '@react-navigation/native';
-import {Button} from 'native-base';
+// import { useTheme,  } from '@react-navigation/native';
+import {useTheme, useColorMode} from 'native-base';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -18,10 +18,17 @@ import MoreScreen from "../screens/MoreScreen";
 const Stack = createNativeStackNavigator();
 
 export const HomeStack = ({navigation ,props }) => {
-  const {colors} = useTheme();
+  const {colors} = useTheme(MyTheme);
+  const {colorMode} =useColorMode(MyTheme);
+
     return (
           <Stack.Navigator
             initialRouteName="Home"
+            options={{
+              headerStyleInterpolator:{
+                backgroundColor: colorMode == 'light' ? colors.white : colors.black
+              }
+            }}
           >
             <Stack.Screen
                 name="Home"
@@ -31,9 +38,9 @@ export const HomeStack = ({navigation ,props }) => {
                   headerShadowVisible:false,
                   title: null,
                   headerStyle:{
-                      elevation: 0,
-                      shadowOpacity: 0,
-                      shadowOffset:{height: 0, width: 0},
+                      // elevation: 0,
+                      // shadowOpacity: 0,
+                      // shadowOffset:{height: 0, width: 0},
                   },
 
                 }}
@@ -48,9 +55,9 @@ export const HomeStack = ({navigation ,props }) => {
                     headerShadowVisible:false,
                     headerTintColor: '#131313',
                     headerStyle:{
-                        elevation: 0,
-                        shadowOpacity: 0,
-                        shadowOffset:0,
+                        // elevation: 0,
+                        // shadowOpacity: 0,
+                        // shadowOffset:0,
                         
                     },
 
@@ -66,9 +73,9 @@ export const HomeStack = ({navigation ,props }) => {
                     headerShadowVisible:false,
                     headerTintColor: '#131313',
                     headerStyle:{
-                        elevation: 0,
-                        shadowOpacity: 0,
-                        shadowOffset:0,
+                        // elevation: 0,
+                        // shadowOpacity: 0,
+                        // shadowOffset:0,
                     },
                     // headerLeft: () => (
                     //   <TouchableOpacity 

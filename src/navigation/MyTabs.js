@@ -12,11 +12,13 @@ import MoreScreen from '../screens/MoreScreen';
 import CollectionScreen from "../screens/CollectionScreen";
 
 import MyTheme from "../Theme";
+import { useColorMode } from "native-base";
 
 const Tab = createBottomTabNavigator();
 
 const MyTabs = () => {
   const {colors} = useTheme(MyTheme);
+  const {colorMode} =useColorMode(MyTheme)
     return (
       <Tab.Navigator
         screenOptions={{
@@ -36,6 +38,7 @@ const MyTabs = () => {
             tabBarStyle:{
               height:56,
               paddingBottom: 5,
+              backgroundColor: colorMode == 'light' ? colors.white : colors.black
             },
             headerStyle: { 
                 headerShadowVisible: false,
