@@ -141,7 +141,7 @@ export const WishList = ({ navigation, sections, shop }) => {
                     showsHorizontalScrollIndicator={false}
                     ListEmptyComponent={ListEmptyComponent}
                     keyExtractor={ item => item.id }
-                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15,
+                    contentContainerStyle={{paddingTop: 20, paddingLeft: 15, paddingRight: 15,
                         backgroundColor: colorMode == 'light' ? colors.white : colors.black
 
                     }}
