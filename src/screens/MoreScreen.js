@@ -20,7 +20,7 @@ const MoreScreen = () => {
                     borderRadius={15}
                     borderColor="grey"
                 >
-                    <Text fontSize="xl">{colorMode=="light"?"Light Mode" : "Dark MOde"}</Text>
+                    <Text fontSize="xl">{colorMode=="light"?"Light Mode" : "Dark Mode"}</Text>
                     <Switch 
                         size="lg"
                         ml="3"
