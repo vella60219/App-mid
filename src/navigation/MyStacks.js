@@ -53,12 +53,16 @@ export const HomeStack = ({navigation ,props }) => {
                     title: null,
                     headerBackTitleVisible: false,
                     headerShadowVisible:false,
-                    headerTintColor: '#131313',
+                    headerTintColor: colors.primary,
                     headerStyle:{
                         // elevation: 0,
                         // shadowOpacity: 0,
                         // shadowOffset:0,
-                        
+                        backgroundColor: colorMode == 'light' ? colors.white : colors.black
+
+                    },
+                    leftButton:{
+                      color:colorMode == 'light' ? colors.black : colors.white
                     },
 
                 }}
