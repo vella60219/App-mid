@@ -3,6 +3,8 @@ import { Center, Box , ScrollView,  Text, Pressable ,VStack, Input,StatusBar ,us
 import { TabView, SceneMap } from "react-native-tab-view";
 import { Dimensions ,TouchableOpacity, Animated } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { addShop } from 'react-redux';
+
 
 import MoreScreen from './MoreScreen';
 
