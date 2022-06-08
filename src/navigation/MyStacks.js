@@ -95,25 +95,23 @@ export const HomeStack = ({navigation ,props }) => {
             <Stack.Screen
                 name="EditProfile"
                 component={EditProfileScreen}
-                options={({ route }) => ({
-                    title: null,
-                    headerBackTitleVisible: false,
-                    headerShadowVisible:false,
-                    headerTintColor: '#131313',
-                    headerStyle:{
-                        // elevation: 0,
-                        // shadowOpacity: 0,
-                        // shadowOffset:0,
-                    },
-                    // headerLeft: () => (
-                    //   <TouchableOpacity 
-                        // onPress={() => navigation.goBack()}
-                    //   >
-                    //      <Ionicons name="chevron-back" color={colors.primary} size={25} />
-                    //   </TouchableOpacity>
-                    // ),
-                  })
-                }
+                options={{
+                  title: null,
+                  headerBackTitleVisible: false,
+                  headerShadowVisible:false,
+                  headerTintColor: colors.primary,
+                  headerStyle:{
+                      // elevation: 0,
+                      // shadowOpacity: 0,
+                      // shadowOffset:0,
+                      backgroundColor: colorMode == 'light' ? colors.white : colors.black
+
+                  },
+                  leftButton:{
+                    color:colorMode == 'light' ? colors.black : colors.white
+                  },
+
+              }}
             />
         </Stack.Navigator>
       );
