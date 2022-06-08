@@ -2,7 +2,9 @@ import React from 'react';
 import { Center, ScrollView, Switch ,useColorMode, Text ,HStack ,useTheme} from "native-base";
 import MyTheme from "../Theme";
 
-const MoreScreen = () => {
+import { UserMoreProfile } from '../components/User';
+
+const MoreScreen = ({ navigation }) => {
     const {colors} = useTheme(MyTheme);
     const { colorMode, toggleColorMode } = useColorMode();
     return (
@@ -10,6 +12,14 @@ const MoreScreen = () => {
             _light={{bg: colors.white }}
             _dark={{bg:colors.black }}
         >
+            <UserMoreProfile
+                navigation={navigation}
+            />
+            <Center
+                w="90%" mx="auto"
+                borderBottomWidth={1}
+                borderBottomColor="grey"
+            ></Center>
             <Center flex={1}>           
                 <HStack 
                     justifyContent="space-around" 

@@ -14,6 +14,7 @@ import ShopScreen from  "../screens/ShopScreen";
 import ShopDetailScreen from "../screens/ShopDetailScreen";
 import AddShopScreen from "../screens/AddShopScreen";
 import MoreScreen from "../screens/MoreScreen";
+import EditProfileScreen from "../screens/EditProfileScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -91,7 +92,29 @@ export const HomeStack = ({navigation ,props }) => {
                   })
                 }
             />
-            
+            <Stack.Screen
+                name="EditProfile"
+                component={EditProfileScreen}
+                options={({ route }) => ({
+                    title: null,
+                    headerBackTitleVisible: false,
+                    headerShadowVisible:false,
+                    headerTintColor: '#131313',
+                    headerStyle:{
+                        // elevation: 0,
+                        // shadowOpacity: 0,
+                        // shadowOffset:0,
+                    },
+                    // headerLeft: () => (
+                    //   <TouchableOpacity 
+                        // onPress={() => navigation.goBack()}
+                    //   >
+                    //      <Ionicons name="chevron-back" color={colors.primary} size={25} />
+                    //   </TouchableOpacity>
+                    // ),
+                  })
+                }
+            />
         </Stack.Navigator>
       );
 };
