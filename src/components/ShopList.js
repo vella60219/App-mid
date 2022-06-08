@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Text, Flex, useTheme, useColorMode, Center } from "native-base";
 import { FlatList } from "react-native";
 
+import LottieView from 'lottie-react-native';
+
 import { ShopListItem, DishListItem, WishListItem } from "./ShopListItem";
 import { ShopTag } from './Tag';
 
@@ -97,6 +99,15 @@ const ListEmptyComponent = () => {
     return (
         <Center>
             <Text>目前沒有任何紀錄！</Text>
+            <LottieView
+                    source={require('../lotties/linzoe.json')}
+                    autoPlay loop 
+                    style={{
+                        height: 600,
+                        marginTop: -25,
+                        marginBottom: -30,
+                    }}
+                />
         </Center>
     );
 }
@@ -122,8 +133,17 @@ export const WishList = ({ navigation, sections, shop }) => {
 
     const ListEmptyComponent = () => {
         return (
-            <Center>
+            <Center flex={1}>
                 <Text>目前沒有任何紀錄！</Text>
+                <LottieView
+                    source={require('../lotties/linzoe.json')}
+                    autoPlay loop 
+                    style={{
+                        height: 600,
+                        marginTop: -25,
+                        marginBottom: -30,
+                    }}
+                />
             </Center>
         );
     }

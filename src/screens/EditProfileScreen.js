@@ -18,7 +18,7 @@ const EditProfileScreen = () => {
         letterSpacing: 1.2,
      };
      const focusInputStyle = {
-        borderColor: colorMode == "light" ? "muted.700" : "white",
+        borderColor: "primary",
      }
 
     const general = useSelector(selectGeneral);
