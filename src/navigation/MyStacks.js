@@ -14,6 +14,7 @@ import ShopScreen from  "../screens/ShopScreen";
 import ShopDetailScreen from "../screens/ShopDetailScreen";
 import AddShopScreen from "../screens/AddShopScreen";
 import MoreScreen from "../screens/MoreScreen";
+import EditProfileScreen from "../screens/EditProfileScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -91,7 +92,27 @@ export const HomeStack = ({navigation ,props }) => {
                   })
                 }
             />
-            
+            <Stack.Screen
+                name="EditProfile"
+                component={EditProfileScreen}
+                options={{
+                  title: null,
+                  headerBackTitleVisible: false,
+                  headerShadowVisible:false,
+                  headerTintColor: colors.primary,
+                  headerStyle:{
+                      // elevation: 0,
+                      // shadowOpacity: 0,
+                      // shadowOffset:0,
+                      backgroundColor: colorMode == 'light' ? colors.white : colors.black
+
+                  },
+                  leftButton:{
+                    color:colorMode == 'light' ? colors.black : colors.white
+                  },
+
+              }}
+            />
         </Stack.Navigator>
       );
 };
